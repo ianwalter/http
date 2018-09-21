@@ -58,5 +58,13 @@
     "plugins": [
       "jest"
     ]
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ianwalter/http.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ianwalter/http/issues"
+  },
+  "homepage": "https://github.com/ianwalter/http#readme"
 }
