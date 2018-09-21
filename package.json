@@ -1,0 +1,61 @@
+{
+  "name": "@ianwalter/http",
+  "version": "1.0.0",
+  "description": "A transpiled global instance of ky (the fetch-based HTTP client)",
+  "main": "dist/http.js",
+  "umd:main": "dist/http.umd.js",
+  "module": "dist/http.m.js",
+  "scripts": {
+    "build": "microbundle build index.js",
+    "watch": "microbundle watch index.js",
+    "test": "npm run build && jest",
+    "lint": "eslint --ext js index.js tests"
+  },
+  "keywords": [
+    "http",
+    "fetch",
+    "ky"
+  ],
+  "author": "Ian Walter <public@iankwalter.com> (https://iankwalter.com)",
+  "license": "ISC",
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "jest": "^23.6.0",
+    "ky": "^0.3.0",
+    "microbundle": "^0.6.0",
+    "np": "^3.0.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
+    "eslint": "^4.19.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-jest": "^21.17.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-standard": "^3.1.0"
+  },
+  "browserslist": [
+    "> 0.25%"
+  ],
+  "jest": {
+    "transformIgnorePatterns": []
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "jest/globals": true
+    },
+    "extends": [
+      "standard"
+    ],
+    "plugins": [
+      "jest"
+    ]
+  }
+}
