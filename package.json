@@ -6,7 +6,9 @@
   "umd:main": "dist/http.umd.js",
   "module": "dist/http.m.js",
   "scripts": {
-    "build": "microbundle build index.js --external none",
+    "bundle": "microbundle build index.js --external none --compress false --sourcemap false",
+    "transpile": "babel dist/*.js -d dist --minified --no-comments",
+    "build": "npm run bundle && npm run transpile",
     "watch": "microbundle watch index.js --external none",
     "test": "npm run build && jest",
     "lint": "eslint --ext js index.js tests"
@@ -28,10 +30,12 @@
     "np": "^3.0.4"
   },
   "devDependencies": {
+    "@babel/cli": "^7.1.0",
     "@babel/core": "^7.1.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/plugin-transform-runtime": "^7.1.0",
     "@babel/preset-env": "^7.1.0",
-    "babel-core": "^7.0.0-bridge.0",
-    "babel-jest": "^23.6.0",
+    "@babel/runtime": "^7.0.0",
     "eslint": "^4.19.1",
     "eslint-config-standard": "^11.0.0",
     "eslint-plugin-import": "^2.12.0",
@@ -43,9 +47,6 @@
   "browserslist": [
     "> 0.25%"
   ],
-  "jest": {
-    "transformIgnorePatterns": []
-  },
   "eslintConfig": {
     "root": true,
     "env": {
