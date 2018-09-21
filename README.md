@@ -11,7 +11,7 @@ npm install @ianwalter/http --save
 ## Usage
 
 ```js
-import http from '@ianwalter/ky'
+import http from '@ianwalter/http'
 
 // Update the ky instance to add a new header globally.
 http.update(http.ky.extend({ headers: { 'csrf-token': 'abc123' } }))
