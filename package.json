@@ -6,8 +6,8 @@
   "umd:main": "dist/http.umd.js",
   "module": "dist/http.m.js",
   "scripts": {
-    "build": "microbundle build index.js",
-    "watch": "microbundle watch index.js",
+    "build": "microbundle build index.js --external none",
+    "watch": "microbundle watch index.js --external none",
     "test": "npm run build && jest",
     "lint": "eslint --ext js index.js tests"
   },
