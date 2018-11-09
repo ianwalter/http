@@ -1,6 +1,5 @@
 # http
-> A transpiled global instance of [ky](https://github.com/sindresorhus/ky) (the
-> fetch-based HTTP client)
+> A transpiled global instance of [ky][kyUrl] (the fetch-based HTTP client)
 
 ## Installation
 
@@ -20,7 +19,12 @@ http.update(http.ky.extend({ headers: { 'csrf-token': 'abc123' } }))
 const response = await http.ky.post('/api/thing', { json: { complete: true } })
 ```
 
+## License
+
+Apache 2.0 with Commons Clause - See [LICENSE](https://github.com/ianwalter/http/blob/master/LICENSE)
+
 &nbsp;
 
-ISC &copy; [Ian Walter](https://iankwalter.com)
+Created by [Ian Walter](https://iankwalter.com)
 
+[kyUrl]: https://github.com/sindresorhus/ky
