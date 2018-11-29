@@ -10,7 +10,7 @@
     "transpile": "babel dist/*.js -d dist --minified --no-comments",
     "build": "npm run bundle && npm run transpile",
     "watch": "microbundle watch index.js --external none",
-    "test": "npm run build && jest",
+    "test": "npm run build && karmatic",
     "lint": "eslint --ext js index.js tests"
   },
   "keywords": [
@@ -24,7 +24,7 @@
     "dist"
   ],
   "dependencies": {
-    "ky": "^0.5.0"
+    "ky": "^0.5.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.0",
@@ -36,13 +36,17 @@
     "eslint": "^5.7.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.12.0",
-    "eslint-plugin-jest": "^22.0.0",
+    "eslint-plugin-jasmine": "^2.10.1",
     "eslint-plugin-node": "^8.0.0",
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0",
-    "jest": "^23.6.0",
+    "fetch-mock": "^7.2.5",
+    "karmatic": "^1.2.0",
     "microbundle": "^0.7.0",
-    "np": "^3.0.4"
+    "nock": "^10.0.2",
+    "np": "^3.0.4",
+    "webpack": "^4.26.1",
+    "whatwg-fetch": "^3.0.0"
   },
   "browserslist": [
     "> 0.25%"
@@ -50,13 +54,13 @@
   "eslintConfig": {
     "root": true,
     "env": {
-      "jest/globals": true
+      "jasmine": true
     },
     "extends": [
       "standard"
     ],
     "plugins": [
-      "jest"
+      "jasmine"
     ]
   },
   "repository": {
