@@ -30,6 +30,6 @@ Apache 2.0 with Commons Clause - See [LICENSE][licenseUrl]
 Created by [Ian Walter](https://iankwalter.com)
 
 [kyUrl]: https://github.com/sindresorhus/ky
-[buildImage]: https://dev.azure.com/iankw/http/_apis/build/status/ianwalter.http
-[buildUrl]: https://dev.azure.com/iankw/http/_build
+[buildImage]: https://dev.azure.com/ianwalter/http/_apis/build/status/ianwalter.http
+[buildUrl]: https://dev.azure.com/ianwalter/http/_build
 [licenseUrl]: https://github.com/ianwalter/http/blob/master/LICENSE
