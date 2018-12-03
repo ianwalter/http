@@ -42,7 +42,7 @@
     "eslint-plugin-standard": "^4.0.0",
     "fetch-mock": "^7.2.5",
     "karmatic": "^1.2.0",
-    "microbundle": "^0.7.0",
+    "microbundle": "^0.8.1",
     "nock": "^10.0.2",
     "np": "^3.0.4",
     "webpack": "^4.26.1",
