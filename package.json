@@ -6,7 +6,7 @@
   "umd:main": "dist/http.umd.js",
   "module": "dist/http.m.js",
   "scripts": {
-    "bundle": "microbundle build index.js --external none --compress false --sourcemap false",
+    "bundle": "microbundle build index.js --external none",
     "transpile": "babel dist/*.js -d dist --minified --no-comments",
     "build": "npm run bundle && npm run transpile",
     "watch": "microbundle watch index.js --external none",
@@ -70,5 +70,14 @@
   "bugs": {
     "url": "https://github.com/ianwalter/http/issues"
   },
-  "homepage": "https://github.com/ianwalter/http#readme"
+  "homepage": "https://github.com/ianwalter/http#readme",
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ],
+    "plugins": [
+      "@babel/plugin-transform-runtime",
+      "@babel/plugin-proposal-object-rest-spread"
+    ]
+  }
 }
