@@ -1,6 +1,6 @@
 {
   "name": "@ianwalter/http",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "A transpiled global instance of ky (the fetch-based HTTP client)",
   "main": "dist/http.js",
   "umd:main": "dist/http.umd.js",
