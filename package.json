@@ -6,11 +6,11 @@
   "umd:main": "dist/http.umd.js",
   "module": "dist/http.m.js",
   "scripts": {
-    "bundle": "microbundle build index.js --external none",
-    "transpile": "babel dist/*.js -d dist --minified --no-comments",
+    "bundle": "microbundle build index.js --external none --target browser --no-sourcemap --no-minify",
+    "transpile": "babel dist/*.js -d dist --minified --source-maps",
     "build": "npm run bundle && npm run transpile",
     "watch": "microbundle watch index.js --external none",
-    "test": "npm run build && karmatic",
+    "test": "npm run build && jest",
     "lint": "eslint --ext js index.js tests"
   },
   "keywords": [
@@ -23,6 +23,14 @@
   "files": [
     "dist"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ianwalter/http.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ianwalter/http/issues"
+  },
+  "homepage": "https://github.com/ianwalter/http#readme",
   "dependencies": {
     "ky": "^0.5.1"
   },
@@ -30,9 +38,8 @@
     "@babel/cli": "^7.1.0",
     "@babel/core": "^7.1.0",
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
-    "@babel/plugin-transform-runtime": "^7.1.0",
-    "@babel/preset-env": "^7.1.0",
-    "@babel/runtime": "^7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
     "eslint": "^5.7.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.12.0",
@@ -41,16 +48,13 @@
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0",
     "fetch-mock": "^7.2.5",
-    "karmatic": "^1.2.0",
+    "jest": "^23.6.0",
+    "jest-puppeteer": "^3.7.0",
     "microbundle": "^0.9.0",
     "nock": "^10.0.2",
     "np": "^3.0.4",
-    "webpack": "^4.26.1",
-    "whatwg-fetch": "^3.0.0"
+    "puppeteer": "^1.11.0"
   },
-  "browserslist": [
-    "> 0.25%"
-  ],
   "eslintConfig": {
     "root": true,
     "env": {
@@ -63,21 +67,12 @@
       "jasmine"
     ]
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ianwalter/http.git"
-  },
-  "bugs": {
-    "url": "https://github.com/ianwalter/http/issues"
-  },
-  "homepage": "https://github.com/ianwalter/http#readme",
   "babel": {
-    "presets": [
-      "@babel/preset-env"
-    ],
     "plugins": [
-      "@babel/plugin-transform-runtime",
       "@babel/plugin-proposal-object-rest-spread"
     ]
+  },
+  "jest": {
+    "preset": "jest-puppeteer"
   }
 }

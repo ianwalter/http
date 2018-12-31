@@ -1,33 +1,36 @@
-import 'whatwg-fetch'
-import http from '../'
-import fetchMock from 'fetch-mock'
+beforeAll(async () => {
+  const path = './node_modules/fetch-mock/dist/es5/client-bundle.js'
+  await page.addScriptTag({ path })
+  await page.addScriptTag({ path: './dist/http.umd.js' })
+})
 
-describe('Http', () => {
-  it(`can replace it's ky instance`, () => {
+test(`http can replace it's ky instance`, async () => {
+  const result = await page.evaluate(() => {
     const headers = { 'content-type': 'application/json' }
     const newKy = http.ky.extend({ headers })
     http.replace(newKy)
-    expect(http.ky).toBe(newKy)
+    return http.ky === newKy
   })
+  expect(result).toBe(true)
+})
 
-  it('can make a GET request', async () => {
-    try {
-      const msg = { msg: 'Hello World!' }
-      fetchMock.mock('http://myapi.com/msg', msg)
-      expect(await http.ky.get('http://myapi.com/msg').json()).toEqual(msg)
-    } catch (err) {
-      fail(err)
-    }
-  })
+test('http can make a GET request', async () => {
+  const msg = { msg: 'Hello World!' }
+  const pageFn = msg => {
+    fetchMock.mock('http://myapi.com/msg', msg)
+    return http.ky.get('http://myapi.com/msg').json()
+  }
+  const result = await page.evaluate(pageFn, msg)
+  expect(result).toEqual(msg)
+})
 
-  it('throws an HTTPError on a 400 Bad Request response', async () => {
-    try {
+test('http throws an HTTPError on a 400 Bad Request response', async () => {
+  const err = await page.evaluate(() => {
+    return new Promise(resolve => {
       fetchMock.mock('http://myapi.com/bad', 400)
-      await http.ky.post('http://myapi.com/bad').json()
-      fail('HTTPError was not thrown!')
-    } catch (err) {
-      expect(err.name).toBe('HTTPError')
-      expect(err.message).toBe('Bad Request')
-    }
+      http.ky.post('http://myapi.com/bad').json().catch(resolve)
+    })
   })
+  expect(err.name).toBe('HTTPError')
+  // expect(err.message).toBe('Bad Request')
 })
