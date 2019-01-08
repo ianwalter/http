@@ -4263,10 +4263,10 @@ kleur@^2.0.1:
   resolved "https://registry.yarnpkg.com/kleur/-/kleur-2.0.2.tgz#b704f4944d95e255d038f0cb05fb8a602c55a300"
   integrity sha512-77XF9iTllATmG9lSlIv0qdQ2BQ/h9t0bJllHlbvsQ0zUWfU7Yi0S8L5JXzPZgkefIiajLmBJJ4BsMJmqcf7oxQ==
 
-ky@^0.5.1:
-  version "0.5.2"
-  resolved "https://registry.yarnpkg.com/ky/-/ky-0.5.2.tgz#744c74d7ff624cce1bd478817692df1ee8df5275"
-  integrity sha512-TVoPpFZ/maGy9XyEh8u1a7VYf1zdZxSRtkGHOSm2AmlRtCEmH9jE3vHaKyV/G/zCYhOA+DHN1c/b3b543mRFlw==
+ky@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/ky/-/ky-0.6.0.tgz#f1c931bbda8170c4532637abc43911b92694eae5"
+  integrity sha512-vliNNTD2C4zOUVn/WEjNUNgN7ftAEr+yyu+qFA1SMX9o1q/61Qm3rQyJvBH6WA0eLnVYdJ/RspiDd11gtmr/+Q==
 
 latest-version@^3.0.0:
   version "3.1.0"
