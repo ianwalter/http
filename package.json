@@ -3,15 +3,13 @@
   "version": "1.2.0",
   "description": "A transpiled global instance of ky (the fetch-based HTTP client)",
   "main": "dist/http.js",
-  "umd:main": "dist/http.umd.js",
-  "module": "dist/http.m.js",
+  "module": "index.js",
   "scripts": {
-    "bundle": "microbundle build index.js --external none --target browser --no-sourcemap --no-minify",
-    "transpile": "babel dist/*.js -d dist --minified --source-maps",
-    "build": "npm run bundle && npm run transpile",
-    "watch": "microbundle watch index.js --external none",
-    "test": "npm run build && jest",
-    "lint": "eslint --ext js index.js tests"
+    "lint": "eslint index.js tests",
+    "dist": "dist index.js",
+    "transpile": "babel index.js -d dist --minified --source-maps",
+    "pretest": "npm run transpile",
+    "test": "jest"
   },
   "keywords": [
     "http",
@@ -32,12 +30,17 @@
   },
   "homepage": "https://github.com/ianwalter/http#readme",
   "dependencies": {
+    "core-js": "^2.6.1",
     "ky": "^0.5.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.0",
     "@babel/core": "^7.1.0",
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/plugin-transform-runtime": "^7.2.0",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/runtime": "^7.2.0",
+    "@ianwalter/dist": "^0.1.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^23.6.0",
     "eslint": "^5.12.0",
@@ -50,7 +53,6 @@
     "fetch-mock": "^7.2.5",
     "jest": "^23.6.0",
     "jest-puppeteer": "^3.7.0",
-    "microbundle": "^0.9.0",
     "np": "^3.0.4",
     "puppeteer": "^1.11.0"
   },
@@ -71,7 +73,19 @@
       "http": true
     }
   },
+  "browserslist": [
+    "> 0.25%"
+  ],
   "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "modules": false,
+          "useBuiltIns": "usage"
+        }
+      ]
+    ],
     "plugins": [
       "@babel/plugin-proposal-object-rest-spread"
     ]
