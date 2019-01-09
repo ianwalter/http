@@ -4,19 +4,19 @@ workflow "CI" {
 }
 
 action "Install" {
-  uses = "docker://node:11-alpine"
+  uses = "docker://buildkite/puppeteer"
   runs = "yarn"
 }
 
 action "Lint" {
-  uses = "docker://node:11-alpine"
+  uses = "docker://buildkite/puppeteer"
   needs = ["Install"]
   runs = "yarn"
   args = "lint"
 }
 
 action "Test" {
-  uses = "docker://node:11-alpine"
+  uses = "docker://buildkite/puppeteer"
   needs = ["Install"]
   runs = "yarn"
   args = "test"
