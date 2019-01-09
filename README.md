@@ -1,12 +1,12 @@
 # http
 > A transpiled global instance of [ky][kyUrl] (the fetch-based HTTP client)
 
-[![build status][buildImage]][buildUrl]
+[![npm page][npmImage]][npmUrl]
 
 ## Installation
 
 ```console
-npm install @ianwalter/http --save
+yarn add @ianwalter/http
 ```
 
 ## Usage
@@ -29,7 +29,7 @@ Apache 2.0 with Commons Clause - See [LICENSE][licenseUrl]
 
 Created by [Ian Walter](https://iankwalter.com)
 
+[npmImage]: https://img.shields.io/npm/v/@ianwalter/http.svg
+[npmUrl]: https://www.npmjs.com/package/@ianwalter/http
 [kyUrl]: https://github.com/sindresorhus/ky
-[buildImage]: https://dev.azure.com/ianwalter/http/_apis/build/status/ianwalter.http
-[buildUrl]: https://dev.azure.com/ianwalter/http/_build
 [licenseUrl]: https://github.com/ianwalter/http/blob/master/LICENSE
