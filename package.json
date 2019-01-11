@@ -4,11 +4,11 @@
   "description": "A transpiled global instance of ky (the fetch-based HTTP client)",
   "main": "dist/http.js",
   "module": "dist/http.m.js",
-  "browser": "dist/http.browser.js",
+  "iife": "dist/http.iife.js",
   "scripts": {
     "lint": "eslint index.js tests",
-    "transpile": "babel index.js -o dist/http.m.js",
-    "pretest": "mkdir -p dist && npm run transpile && dist --inline",
+    "iife": "dist -i dist/http.m.js --inline --no-cjs --no-esm",
+    "pretest": "dist --inline ky --babel --no-iife && npm run iife",
     "test": "jest"
   },
   "keywords": [
@@ -30,6 +30,7 @@
   },
   "homepage": "https://github.com/ianwalter/http#readme",
   "dependencies": {
+    "@babel/runtime": "^7.2.0",
     "ky": "^0.5.1"
   },
   "devDependencies": {
@@ -38,8 +39,7 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
     "@babel/plugin-transform-runtime": "^7.2.0",
     "@babel/preset-env": "^7.2.3",
-    "@babel/runtime": "^7.2.0",
-    "@ianwalter/dist": "^1.0.0-1",
+    "@ianwalter/dist": "^1.3.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^23.6.0",
     "eslint": "^5.12.0",
@@ -77,23 +77,12 @@
   ],
   "babel": {
     "presets": [
-      [
-        "@babel/preset-env",
-        {
-          "modules": false
-        }
-      ]
+      "@babel/preset-env"
     ],
     "plugins": [
-      "@babel/plugin-proposal-object-rest-spread"
-    ],
-    "env": {
-      "test": {
-        "presets": [
-          "@babel/preset-env"
-        ]
-      }
-    }
+      "@babel/plugin-proposal-object-rest-spread",
+      "@babel/plugin-transform-runtime"
+    ]
   },
   "jest": {
     "preset": "jest-puppeteer"

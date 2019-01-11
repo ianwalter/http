@@ -26,7 +26,7 @@
   dependencies:
     "@babel/highlight" "^7.0.0"
 
-"@babel/core@^7.1.0":
+"@babel/core@^7.1.0", "@babel/core@^7.2.2":
   version "7.2.2"
   resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.2.2.tgz#07adba6dde27bb5ad8d8672f15fde3e08184a687"
   integrity sha512-59vB0RWt09cAct5EIe58+NzGP4TFSD3Bz//2/ELy3ZeTeKF6VTD1AXlH8BGGbCX0PuobZBsIzO7IAI9PH67eKw==
@@ -675,13 +675,20 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@ianwalter/dist@^1.0.0-1":
-  version "1.0.0-1"
-  resolved "https://registry.yarnpkg.com/@ianwalter/dist/-/dist-1.0.0-1.tgz#20f95458a29c7ee7c6b2f634a5bd7250a8d41272"
-  integrity sha512-ZVWD6plYt+MHvbP+sAZh/8LtoIvFEs4Q6hLN+77NbhiLWhzpt8UCEBYBDhw4MyF+C9KdM6tdo60plXmkzrUmFg==
+"@ianwalter/clone@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@ianwalter/clone/-/clone-1.0.2.tgz#ed72ae0db824b7fd45c6eae8ce0288f94edc97a9"
+  integrity sha512-pqYkbPcI+VEgpcyhGCbeGeq3rCZLpj+Mk7yuYasMPttkfkGS+a4kI9VUNa5JY4WfYMcUIIq7GgBxgnyejHb6fg==
+
+"@ianwalter/dist@^1.3.0":
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/@ianwalter/dist/-/dist-1.3.0.tgz#87beee225df43ba5208b77036f72f3bacb936f8f"
+  integrity sha512-vTZUQupjAEYC8zOXA9hQUPmoSUrOdJQrAMWe6rabBZ6SEHZAiptVWEWtkzuDU1tSW/6oOx60MIL8JuCHIVI6Eg==
   dependencies:
+    "@babel/core" "^7.2.2"
+    "@ianwalter/clone" "^1.0.2"
     "@ianwalter/npm-short-name" "^1.0.0"
-    "@ianwalter/promise-complete" "^1.0.0"
+    "@ianwalter/promise-complete" "^2.0.0"
     chalk "^2.4.2"
     meow "^5.0.0"
     pify "^4.0.1"
@@ -698,10 +705,10 @@
   dependencies:
     camelcase "^5.0.0"
 
-"@ianwalter/promise-complete@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@ianwalter/promise-complete/-/promise-complete-1.0.0.tgz#a11b4ce24f5de90a25991ed429002dfb01d6d39a"
-  integrity sha512-qtGXIXp0oOPLuvaOSK2XROTeyIitk5btrAwlqmF9AVY5SWKYCTDuVpSNbIsgFQ90onE/PlbyRCtId71ON41ycQ==
+"@ianwalter/promise-complete@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@ianwalter/promise-complete/-/promise-complete-2.0.0.tgz#c52446d48aa5b5bc572fee4a4d1ffffd300752f2"
+  integrity sha512-jwyGQoqX4rFwAv048v0TSBB4IrH7TBldOAXEQkcbd9ODk3iWkT8wnh/HZT26t7+CNW3joCwi+D0OmJTrAmTykA==
 
 "@samverschueren/stream-to-observable@^0.3.0":
   version "0.3.0"

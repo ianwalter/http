@@ -1,7 +1,7 @@
 beforeAll(async () => {
   const path = './node_modules/fetch-mock/dist/es5/client-bundle.js'
   await page.addScriptTag({ path })
-  await page.addScriptTag({ path: './dist/http.browser.js' })
+  await page.addScriptTag({ path: './dist/http.iife.js' })
 })
 
 test(`http can replace it's ky instance`, async () => {
