@@ -6,7 +6,7 @@
   "module": "dist/http.m.js",
   "iife": "dist/http.iife.js",
   "scripts": {
-    "lint": "eslint index.js tests",
+    "lint": "eslint index.js test.js",
     "dist": "dist --inline ky --babel --no-iife",
     "iife": "dist --inline --babel --no-cjs --no-esm",
     "pretest": "npm run dist && npm run iife",
@@ -64,15 +64,9 @@
   },
   "eslintConfig": {
     "root": true,
-    "env": {
-      "jest/globals": true
-    },
     "extends": [
       "eslint:recommended",
       "standard"
-    ],
-    "plugins": [
-      "jest"
     ],
     "globals": {
       "page": true,
