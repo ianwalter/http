@@ -4,19 +4,19 @@ workflow "CI" {
 }
 
 action "Install" {
-  uses = "docker://buildkite/puppeteer"
+  uses = "ianwalter/puppeteer"
   runs = "yarn"
 }
 
 action "Lint" {
-  uses = "docker://buildkite/puppeteer"
+  uses = "ianwalter/puppeteer"
   needs = ["Install"]
   runs = "yarn"
   args = "lint"
 }
 
 action "Test" {
-  uses = "docker://buildkite/puppeteer"
+  uses = "ianwalter/puppeteer"
   needs = ["Install"]
   runs = "yarn"
   args = "test"
