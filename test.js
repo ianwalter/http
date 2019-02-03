@@ -1,13 +1,10 @@
 import test from 'ava'
 import puppeteerHelper from '@ianwalter/puppeteer-helper'
 
-const withPage = puppeteerHelper(
-  [
-    './node_modules/fetch-mock/dist/es5/client-bundle.js',
-    './dist/http.iife.js'
-  ],
-  { args: ['--no-sandbox', '--disable-setuid-sandbox'] }
-)
+const withPage = puppeteerHelper([
+  './node_modules/fetch-mock/dist/es5/client-bundle.js',
+  './dist/http.iife.js'
+])
 
 test(`ky instance can be replaced`, withPage, async (t, page) => {
   t.true(await page.evaluate(() => {

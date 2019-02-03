@@ -757,10 +757,10 @@
   dependencies:
     "@babel/runtime" "^7.2.0"
 
-"@ianwalter/puppeteer-helper@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@ianwalter/puppeteer-helper/-/puppeteer-helper-1.0.0.tgz#9813f1a23cb16e33a78d5e95ede520970ad4859f"
-  integrity sha512-mxlDOLInc0KX2Hxp1zGpsQXmMR/EXgvMFUFkybUph78Qv2yE3QKS+BxZj2u7j/6nTpUdrQEKnbYKn39YZ9OAKA==
+"@ianwalter/puppeteer-helper@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@ianwalter/puppeteer-helper/-/puppeteer-helper-2.0.0.tgz#367ff7853c875fb23ef7bd607c6e78204a8c8a9f"
+  integrity sha512-+YbDEPJ6sMM1K2hFjpsPvGDCM9nGEGGjzvRZLcO5GSr+wSrSeXesw5twJm3KXI4dlWAcWqjdsxEUquxNnEVJMQ==
   dependencies:
     puppeteer "^1.11.0"
 
