@@ -32,7 +32,7 @@
   "homepage": "https://github.com/ianwalter/http#readme",
   "dependencies": {
     "@babel/runtime": "^7.2.0",
-    "ky": "^0.5.1"
+    "ky": "^0.8.0"
   },
   "devDependencies": {
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
