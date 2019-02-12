@@ -2,13 +2,12 @@
   "name": "@ianwalter/http",
   "version": "2.1.0",
   "description": "A transpiled global instance of ky (the fetch-based HTTP client)",
-  "main": "dist/http.js",
-  "module": "dist/http.m.js",
+  "browser": "dist/http.js",
   "iife": "dist/http.iife.js",
   "scripts": {
     "lint": "eslint index.js test.js",
     "dist": "dist --inline ky --babel --no-iife",
-    "iife": "dist --inline --babel --no-cjs --no-esm",
+    "iife": "dist --inline --babel --no-browser",
     "pretest": "npm run dist && npm run iife",
     "test": "ava"
   },
@@ -35,9 +34,8 @@
     "ky": "^0.8.0"
   },
   "devDependencies": {
-    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
     "@ianwalter/babel-preset-lib": "^1.0.3",
-    "@ianwalter/dist": "^2.0.0",
+    "@ianwalter/dist": "^2.0.1",
     "@ianwalter/puppeteer-helper": "^2.1.0",
     "@ianwalter/test-server": "^1.0.0",
     "ava": "^1.2.0",
@@ -54,11 +52,7 @@
   ],
   "babel": {
     "presets": [
-      "@babel/preset-env"
-    ],
-    "plugins": [
-      "@babel/plugin-proposal-object-rest-spread",
-      "@babel/plugin-transform-runtime"
+      "@ianwalter/lib"
     ]
   },
   "eslintConfig": {
@@ -68,8 +62,6 @@
       "standard"
     ],
     "globals": {
-      "page": true,
-      "fetchMock": true,
       "http": true
     }
   }
