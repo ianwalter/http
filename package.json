@@ -34,8 +34,8 @@
     "ky": "^0.8.0"
   },
   "devDependencies": {
-    "@ianwalter/babel-preset-lib": "^1.0.3",
-    "@ianwalter/dist": "^2.0.1",
+    "@ianwalter/babel-preset-lib": "^1.1.0",
+    "@ianwalter/dist": "^2.0.2",
     "@ianwalter/puppeteer-helper": "^2.1.0",
     "@ianwalter/test-server": "^1.0.0",
     "ava": "^1.2.0",
