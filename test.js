@@ -1,12 +1,10 @@
 import test from 'ava'
 import puppeteerHelper from '@ianwalter/puppeteer-helper'
+import createTestServer from '@ianwalter/test-server'
 
-const withPage = puppeteerHelper([
-  './node_modules/fetch-mock/dist/es5/client-bundle.js',
-  './dist/http.iife.js'
-])
+const withPage = puppeteerHelper(['./dist/http.iife.js'])
 
-test(`ky instance can be replaced`, withPage, async (t, page) => {
+test('replace', withPage, async (t, page) => {
   t.true(await page.evaluate(() => {
     const headers = { 'content-type': 'application/json' }
     const newKy = http.ky.extend({ headers })
@@ -15,25 +13,22 @@ test(`ky instance can be replaced`, withPage, async (t, page) => {
   }))
 })
 
-test('http can make a GET request', withPage, async (t, page) => {
+test('GET request', withPage, async (t, page) => {
   const msg = { msg: 'Hello World!' }
-  const result = await page.evaluate(
-    msg => {
-      fetchMock.mock('http://myapi.com/msg', msg)
-      return http.ky.get('http://myapi.com/msg').json()
-    },
-    msg
-  )
+  const server = await createTestServer()
+  server.use(ctx => (ctx.body = msg))
+  const result = await page.evaluate(url => http.ky.get(url).json(), server.url)
   t.deepEqual(result, msg)
+  await server.close()
 })
 
-test('http throws an HTTPError on a 400 Bad Request response', withPage, async (t, page) => {
-  const err = await page.evaluate(() => {
-    return new Promise(resolve => {
-      fetchMock.mock('http://myapi.com/bad', 400)
-      http.ky.post('http://myapi.com/bad').json().catch(resolve)
-    })
-  })
+test('throws HTTPError', withPage, async (t, page) => {
+  const server = await createTestServer()
+  server.use(ctx => (ctx.status = 400))
+  const err = await page.evaluate(
+    url => new Promise(resolve => http.ky.post(url).json().catch(resolve)),
+    server.url
+  )
   t.is(err.name, 'HTTPError')
-  // expect(err.message).toBe('Bad Request')
+  await server.close()
 })
