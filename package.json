@@ -1,6 +1,6 @@
 {
   "name": "@ianwalter/http",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "A transpiled global instance of ky (the fetch-based HTTP client)",
   "browser": "dist/http.js",
   "scripts": {
