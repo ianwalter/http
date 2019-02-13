@@ -3,9 +3,10 @@
   "version": "2.1.1",
   "description": "A transpiled global instance of ky (the fetch-based HTTP client)",
   "browser": "dist/http.js",
+  "main": "dist/http.js",
   "scripts": {
     "lint": "eslint index.js test.js",
-    "pretest": "dist --inline ky --babel",
+    "pretest": "dist --inline ky --babel --no-cjs",
     "test": "ava"
   },
   "keywords": [
