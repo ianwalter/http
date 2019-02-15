@@ -659,6 +659,11 @@
     "@babel/plugin-transform-runtime" "^7.2.0"
     "@babel/preset-env" "^7.3.1"
 
+"@ianwalter/clone@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@ianwalter/clone/-/clone-2.0.1.tgz#c9f37e2d13e386d3a63e632e6a6199fd44d71bed"
+  integrity sha512-SiDz8Vh59ZzQk98HKxf54j5D/ER0hV8hPU78Lw5I5YzdJJUQK/pZGBQJO0bfJsNVmy8eAbjYR7N1IR0Mn1qsNg==
+
 "@ianwalter/dist@^2.0.2":
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/@ianwalter/dist/-/dist-2.0.2.tgz#fda0c0c11d9c711eba622f3c5f7d7950adf6998d"
@@ -677,6 +682,13 @@
     rollup-plugin-commonjs "^9.2.0"
     rollup-plugin-json "^3.1.0"
     rollup-plugin-node-resolve "^4.0.0"
+
+"@ianwalter/log@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@ianwalter/log/-/log-2.0.0.tgz#3ed80b4a9e2b2529659bef9608f5a45113b0cb03"
+  integrity sha512-EM+WCSxospiphGCQ1dWQOxn/tBKJIJUyI1joRbZa7O9tCP8Zv/T0wsZ1N3w+7/bpf/5WLtoOBkqGIaIwdgOYJg==
+  dependencies:
+    "@ianwalter/clone" "^2.0.1"
 
 "@ianwalter/npm-short-name@^1.0.0":
   version "1.0.0"
@@ -702,10 +714,11 @@
     webpack "^4.29.3"
 
 "@ianwalter/test-server@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@ianwalter/test-server/-/test-server-1.0.0.tgz#7538b83ee9414947507b1751b2e8cdde180b8683"
-  integrity sha512-VgGImUH+vxIw5diSrKm5e2MorvqIR1d4yUPN6yb/VNhd65isyht36od+Yy5u4Fz5DnXCS2TICxGaijaVymN/lg==
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@ianwalter/test-server/-/test-server-1.1.0.tgz#c54e374b0782ad9d912c65857f48189646743f44"
+  integrity sha512-ovUOlzRoXuO2f7b6PtG8uFbkLJmVyoThiA9a7wvIE86cgtNMnbEpFWZ4DvbTQ0IKJGJhUbeyf9iANQzAG+jVLA==
   dependencies:
+    "@ianwalter/log" "^2.0.0"
     koa "^2.7.0"
     koa-json "^2.0.2"
 
