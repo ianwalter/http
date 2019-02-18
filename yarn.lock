@@ -714,13 +714,14 @@
     webpack "^4.29.3"
 
 "@ianwalter/test-server@^1.0.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@ianwalter/test-server/-/test-server-1.1.0.tgz#c54e374b0782ad9d912c65857f48189646743f44"
-  integrity sha512-ovUOlzRoXuO2f7b6PtG8uFbkLJmVyoThiA9a7wvIE86cgtNMnbEpFWZ4DvbTQ0IKJGJhUbeyf9iANQzAG+jVLA==
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@ianwalter/test-server/-/test-server-1.2.0.tgz#fb7c9b5e81d9a02a9d6b1674628df0e0eac098b4"
+  integrity sha512-j5ShMpb6hsEz0LJvMcz2EnU6DYsPt/mtwweJtTnS0w6aeTX4EKHrqErCK3FsoM016ljBGHHCWCdGa+SlOxRa3w==
   dependencies:
     "@ianwalter/log" "^2.0.0"
     koa "^2.7.0"
     koa-json "^2.0.2"
+    server-destroy "^1.0.1"
 
 "@samverschueren/stream-to-observable@^0.3.0":
   version "0.3.0"
@@ -5615,6 +5616,11 @@ serialize-javascript@^1.4.0:
   version "1.6.1"
   resolved "https://registry.yarnpkg.com/serialize-javascript/-/serialize-javascript-1.6.1.tgz#4d1f697ec49429a847ca6f442a2a755126c4d879"
   integrity sha512-A5MOagrPFga4YaKQSWHryl7AXvbQkEqpw4NNYMTNYUNV51bA8ABHgYFpqKx+YFFrw59xMV1qGH1R4AgoNIVgCw==
+
+server-destroy@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/server-destroy/-/server-destroy-1.0.1.tgz#f13bf928e42b9c3e79383e61cc3998b5d14e6cdd"
+  integrity sha1-8Tv5KOQrnD55OD5hzDmYtdFObN0=
 
 set-blocking@^2.0.0, set-blocking@~2.0.0:
   version "2.0.0"
