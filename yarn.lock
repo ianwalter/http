@@ -3803,10 +3803,10 @@ koa@^2.7.0:
     type-is "^1.6.16"
     vary "^1.1.2"
 
-ky@^0.8.0:
-  version "0.8.0"
-  resolved "https://registry.yarnpkg.com/ky/-/ky-0.8.0.tgz#7fc2e965bcbbd3d5e7986a004858e40fb5208825"
-  integrity sha512-nnYt5Ivmeau7k0uIt+YISFKxu4Wu1LRjqJLWSS2ec9eBgr8vKxju5OveDFxz4XSXAmmL+32oI7JwG6XUD05p8Q==
+ky@^0.9.0:
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/ky/-/ky-0.9.0.tgz#f6ca68417e1c95e0292d083d5c3c4c39558c13fe"
+  integrity sha512-5OgdeZ/HROtJh6ghuSARGIe4Y0SzY+eM7EY5YEvlVVBmp3V2ioz1erGRYaf55uMUG0jTkE+L8USxD+oiRmgX8A==
 
 latest-version@^3.0.0:
   version "3.1.0"
