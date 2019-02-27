@@ -689,14 +689,15 @@
   resolved "https://registry.yarnpkg.com/@ianwalter/clone/-/clone-2.0.1.tgz#c9f37e2d13e386d3a63e632e6a6199fd44d71bed"
   integrity sha512-SiDz8Vh59ZzQk98HKxf54j5D/ER0hV8hPU78Lw5I5YzdJJUQK/pZGBQJO0bfJsNVmy8eAbjYR7N1IR0Mn1qsNg==
 
-"@ianwalter/dist@^2.0.2":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@ianwalter/dist/-/dist-2.1.0.tgz#9e5ff734769f0ccbc6387df5e2207d4836290eb2"
-  integrity sha512-p3n3DWtoDeLFLJg5AN0EiCzkKWsj762lA33sXcCFJw+57R6E+MFkm3nHXelGPwCnTfcXLoj8MNDnVgX2I0u1mg==
+"@ianwalter/dist@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@ianwalter/dist/-/dist-3.0.0.tgz#8bab97d635c334e2960bf734b4cc8da3fc740c19"
+  integrity sha512-lGYooB3kCOxZwI13AMRSzqdohXcPlzKIVBh1dgbOhZOu/3pbjqpCUurmxq9MegYQ0zvPuxAKqD9nfFeRzlMITA==
   dependencies:
     "@babel/core" "^7.3.3"
     "@ianwalter/npm-short-name" "^1.0.0"
     "@ianwalter/promise-complete" "^3.0.1"
+    "@ianwalter/rollup-plugin-hashbang" "^1.0.1"
     builtin-modules "^3.0.0"
     chalk "^2.4.2"
     meow "^5.0.0"
@@ -707,7 +708,7 @@
     rollup-plugin-babel "^4.3.2"
     rollup-plugin-commonjs "^9.2.0"
     rollup-plugin-json "^3.1.0"
-    rollup-plugin-node-resolve "^4.0.0"
+    rollup-plugin-node-resolve "^4.0.1"
 
 "@ianwalter/log@^2.0.0":
   version "2.0.0"
@@ -738,6 +739,13 @@
     memory-fs "^0.4.1"
     puppeteer "^1.11.0"
     webpack "^4.29.3"
+
+"@ianwalter/rollup-plugin-hashbang@^1.0.1":
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/@ianwalter/rollup-plugin-hashbang/-/rollup-plugin-hashbang-1.3.0.tgz#635f33179941e3b4b2c8b469547517f87c1c64b2"
+  integrity sha512-zjQfzDcz7XR9fEDb6fBg+N6vvosQANit4oMwX7CBTu8eFAUVvEuGIAXejQ2JyHmDI4jcgS/PqHuERuSmaKWrNw==
+  dependencies:
+    magic-string "^0.25.2"
 
 "@ianwalter/test-server@^1.0.0":
   version "1.2.0"
@@ -4072,7 +4080,7 @@ lru-cache@^5.1.1:
   dependencies:
     yallist "^3.0.2"
 
-magic-string@^0.25.1:
+magic-string@^0.25.1, magic-string@^0.25.2:
   version "0.25.2"
   resolved "https://registry.yarnpkg.com/magic-string/-/magic-string-0.25.2.tgz#139c3a729515ec55e96e69e82a11fe890a293ad9"
   integrity sha512-iLs9mPjh9IuTtRsqqhNGYcZXGei0Nh/A4xirrsqW7c+QhKVFL2vm7U09ru6cHRD22azaP/wMDgI+HCqbETMTtg==
@@ -5519,14 +5527,14 @@ rollup-plugin-json@^3.1.0:
   dependencies:
     rollup-pluginutils "^2.3.1"
 
-rollup-plugin-node-resolve@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-4.0.0.tgz#9bc6b8205e9936cc0e26bba2415f1ecf1e64d9b2"
-  integrity sha512-7Ni+/M5RPSUBfUaP9alwYQiIKnKeXCOHiqBpKUl9kwp3jX5ZJtgXAait1cne6pGEVUUztPD6skIKH9Kq9sNtfw==
+rollup-plugin-node-resolve@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-4.0.1.tgz#f95765d174e5daeef9ea6268566141f53aa9d422"
+  integrity sha512-fSS7YDuCe0gYqKsr5OvxMloeZYUSgN43Ypi1WeRZzQcWtHgFayV5tUSPYpxuaioIIWaBXl6NrVk0T2/sKwueLg==
   dependencies:
     builtin-modules "^3.0.0"
     is-module "^1.0.0"
-    resolve "^1.8.1"
+    resolve "^1.10.0"
 
 rollup-pluginutils@^2.3.0, rollup-pluginutils@^2.3.1, rollup-pluginutils@^2.3.3:
   version "2.3.3"
