@@ -1,4 +1,4 @@
-import http from '..'
+import http from '../..'
 
 const headers = { 'content-type': 'application/json' }
 const newKy = http.ky.extend({ headers })

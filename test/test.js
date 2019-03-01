@@ -5,7 +5,7 @@ import createTestServer from '@ianwalter/test-server'
 const withPage = puppeteerHelper()
 
 test('replace', withPage, async t => {
-  t.true(await t.evaluate('./evals/replace.js'))
+  t.true(await t.evaluate('./test/helpers/replace.js'))
 })
 
 test('GET request', withPage, async t => {
@@ -16,7 +16,8 @@ test('GET request', withPage, async t => {
   server.use(ctx => (ctx.body = msg))
 
   // Run the evaluation script in the browser.
-  t.deepEqual(await t.evaluate('./evals/get.js', server.url), msg)
+  t.context.args = server.url
+  t.deepEqual(await t.evaluate('./test/helpers/get.js'), msg)
 
   // Close the mock server.
   await server.close()
@@ -28,7 +29,8 @@ test('400 response throws HTTPError', withPage, async t => {
   server.use(ctx => (ctx.status = 400))
 
   // Run the evaluation script in the browser.
-  t.is(await t.evaluate('./evals/error.js', server.url), 'HTTPError')
+  t.context.args = server.url
+  t.is(await t.evaluate('./test/helpers/error.js'), 'HTTPError')
 
   // Close the mock server.
   await server.close()
