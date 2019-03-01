@@ -620,7 +620,7 @@
     js-levenshtein "^1.1.3"
     semver "^5.3.0"
 
-"@babel/runtime@^7.2.0":
+"@babel/runtime@^7.2.0", "@babel/runtime@^7.3.1":
   version "7.3.4"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.3.4.tgz#73d12ba819e365fcf7fd152aed56d6df97d21c83"
   integrity sha512-IvfvnMdSaLBateu0jfsYIpZTxAc2cKEXEMiezGGN75QcBcecDUKd3PgLAncT0oOgxKy8dd8hrJKj9MfzgfZd6g==
@@ -717,6 +717,13 @@
   dependencies:
     "@ianwalter/clone" "^2.0.1"
 
+"@ianwalter/merge@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@ianwalter/merge/-/merge-2.0.1.tgz#80d87df43c0626896981e0793ff93a4b8db4e45b"
+  integrity sha512-EU5xWA1ABUBMwSXs3fQUYQpugfkBV/trr+SpN7mVh6dVyu+8dhl7Ma+KYPIbE7I8Xs5Hr9k9Ollz8juN0Hw59Q==
+  dependencies:
+    "@babel/runtime" "^7.3.1"
+
 "@ianwalter/npm-short-name@^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@ianwalter/npm-short-name/-/npm-short-name-1.0.0.tgz#1ff8fcf73a20841e8fa13af77957a01c6e2329e8"
@@ -731,11 +738,12 @@
   dependencies:
     "@babel/runtime" "^7.2.0"
 
-"@ianwalter/puppeteer-helper@^3.0.0":
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/@ianwalter/puppeteer-helper/-/puppeteer-helper-3.2.0.tgz#50ab2a0f3554fc3668b856bab3a98cba8c01895a"
-  integrity sha512-5Sz3ZeUuM9ZkT/6UFC6T8famDdrhRdx17MRHNiBXEkobPLwAIOx7QM7JfR9Jlm6w6yD+dV6sHirTHJSYwUSejA==
+"@ianwalter/puppeteer-helper@^4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@ianwalter/puppeteer-helper/-/puppeteer-helper-4.0.0.tgz#b3da0ca9fce9210d53e31a39c13a5fc92f6f1bbb"
+  integrity sha512-ThLWCWY6oQFUfxmCcGAE72c7IHC/qTMR0nEXgC3o6JcwylvXSrV7V/m3e/fmG1whE8h2AsJQE1k1jwXOmREC5A==
   dependencies:
+    "@ianwalter/merge" "^2.0.1"
     memory-fs "^0.4.1"
     prettydiff "^100.2.3"
     puppeteer "^1.11.0"

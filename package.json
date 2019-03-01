@@ -34,7 +34,7 @@
   "devDependencies": {
     "@ianwalter/babel-preset-lib": "^1.1.0",
     "@ianwalter/dist": "^3.0.0",
-    "@ianwalter/puppeteer-helper": "^3.0.0",
+    "@ianwalter/puppeteer-helper": "^4.0.0",
     "@ianwalter/test-server": "^1.0.0",
     "ava": "^1.2.0",
     "eslint": "^5.12.0",
