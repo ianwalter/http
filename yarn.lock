@@ -810,7 +810,7 @@
   dependencies:
     magic-string "^0.25.2"
 
-"@ianwalter/test-server@^1.0.0":
+"@ianwalter/test-server@^1.3.0":
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/@ianwalter/test-server/-/test-server-1.3.0.tgz#15e8c12ed8da93f96e97e058c6e99372597b4c71"
   integrity sha512-K8uCglquZgG9bltAnX5LRIODLQuJlue9qCJwqKjLmJdOGuvKMqfc8EBdi75bhq9T/yFHF6ivMerrKmW439suFQ==
