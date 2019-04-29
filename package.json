@@ -38,7 +38,7 @@
     "@ianwalter/puppeteer-helper": "^3.0.0",
     "@ianwalter/renovate-config": "^1.1.0",
     "@ianwalter/test-server": "^1.0.0",
-    "ava": "^1.2.0",
+    "ava": "^1.4.1",
     "np": "^5.0.0"
   },
   "browserslist": "> 2%, not dead",
