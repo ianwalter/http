@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/ianwalter/http#readme",
   "dependencies": {
-    "@babel/runtime": "^7.2.0",
+    "@babel/runtime": "^7.4.4",
     "ky": "^0.9.0"
   },
   "devDependencies": {
