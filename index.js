@@ -17,6 +17,13 @@ export class Http {
 
   async fetch (method, url, options = {}) {
     const init = { method, ...this.options, ...options }
+
+    if (typeof init.body === 'object') {
+      init.headers = init.headers || new window.Headers()
+      init.headers.append('Content-Type', 'application/json')
+      init.body = JSON.stringify(init.body)
+    }
+
     const response = await window.fetch(url, init)
     if (response.ok) {
       const contentType = response.headers.get('Content-Type')
