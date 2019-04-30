@@ -1,4 +1,3 @@
-const defaults = { mode: 'same-origin' }
 const methods = [
   'get',
   'post',
@@ -6,9 +5,17 @@ const methods = [
   'delete'
 ]
 
+export class HttpError extends Error {
+  constructor (response) {
+    super(response.statusText)
+    this.name = this.constructor.name
+    this.response = response
+  }
+}
+
 export class Http {
   constructor (options = {}) {
-    this.options = Object.assign(defaults, options)
+    this.options = options
 
     methods.forEach(method => {
       this[method] = async (url, options) => this.fetch(method, url, options)
@@ -16,26 +23,35 @@ export class Http {
   }
 
   async fetch (method, url, options = {}) {
-    const init = { method, ...this.options, ...options }
+    const init = { method, headers: {}, ...this.options, ...options }
+    init.headers = new window.Headers(init.headers)
 
     if (typeof init.body === 'object') {
-      init.headers = init.headers || new window.Headers()
       init.headers.append('Content-Type', 'application/json')
       init.body = JSON.stringify(init.body)
     }
 
+    if (init.baseUrl) {
+      url = init.baseUrl + url
+      delete init.baseUrl
+    }
+
     const response = await window.fetch(url, init)
+    const packagedResponse = { ...response }
+
+    //
+    const contentType = response.headers.get('Content-Type')
+    const isJson = contentType && contentType.indexOf('application/json') > -1
+    if (response.body && isJson) {
+      packagedResponse.body = await response.json()
+    } else if (response.body) {
+      packagedResponse.body = await response.text()
+    }
+
     if (response.ok) {
-      const contentType = response.headers.get('Content-Type')
-      const isJson = contentType && contentType.indexOf('application/json') > -1
-      if (response.body && isJson) {
-        return { ...response, body: await response.json() }
-      } else if (response.body) {
-        return { ...response, body: await response.text() }
-      }
-      return response
+      return packagedResponse
     } else {
-      // TODO: throw error
+      throw new HttpError(packagedResponse)
     }
   }
 }

@@ -973,10 +973,10 @@
   dependencies:
     magic-string "^0.25.2"
 
-"@ianwalter/test-server@^1.4.1":
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/@ianwalter/test-server/-/test-server-1.4.1.tgz#99661cc717b92f3badad76685243ec42c8928323"
-  integrity sha512-U0gzN0rUGQtU6eamoev1zya2+fsJNnxBcMQATwX3XJnvwdyredlob9YQZ5mO/qcnegKyyklt8tLvJsFFpFMOFQ==
+"@ianwalter/test-server@^1.4.2":
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/@ianwalter/test-server/-/test-server-1.4.2.tgz#e98d151645576e8ddd7c4e92368bd58afa89c149"
+  integrity sha512-ocURZiPrfB8QFb7NYTFFEPA2112eRvIgAnWaqMQdZ4UCe9xJKPu8SZhAlUTv1atbW5oQGYqLTppguuJQRGoJBA==
   dependencies:
     "@ianwalter/print" "^2.3.0"
     koa "^2.7.0"

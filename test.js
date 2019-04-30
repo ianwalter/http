@@ -33,7 +33,7 @@ test('POST text', withPage, async t => {
   await server.close()
 })
 
-test.skip('POST json', withPage, async t => {
+test('POST json', withPage, async t => {
   const msg = { msg: 'Hello World!' }
 
   // Set up the mock server.
@@ -48,13 +48,40 @@ test.skip('POST json', withPage, async t => {
   await server.close()
 })
 
-test.skip('500 response throws HTTPError', withPage, async t => {
+test('GET with header', withPage, async t => {
+  // Set up the mock server.
+  const server = await createTestServer()
+  server.use(ctx => (ctx.body = ctx.request.header.authorization))
+
+  // Run the evaluation script in the browser.
+  const token = 'Bearer 123'
+  const options = { url: server.url, header: { 'Authorization': token } }
+  t.is(await t.evaluate('./evals/header.js', options), token)
+
+  // Close the mock server.
+  await server.close()
+})
+
+test('500 response throws HttpError', withPage, async t => {
   // Set up the mock server.
   const server = await createTestServer()
   server.use(ctx => (ctx.status = 500))
 
   // Run the evaluation script in the browser.
-  t.is(await t.evaluate('./evals/error.js', server.url), 'HTTPError')
+  t.is(await t.evaluate('./evals/error.js', server.url), 'HttpError')
+
+  // Close the mock server.
+  await server.close()
+})
+
+test('baseUrl', withPage, async t => {
+  // Set up the mock server.
+  const server = await createTestServer()
+  server.use(ctx => (ctx.body = ctx.request.path))
+
+  // Run the evaluation script in the browser.
+  const path = '/i-am-a-path'
+  t.is(await t.evaluate('./evals/baseUrl.js', { url: server.url, path }), path)
 
   // Close the mock server.
   await server.close()
