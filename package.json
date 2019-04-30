@@ -29,7 +29,7 @@
   "homepage": "https://github.com/ianwalter/http#readme",
   "dependencies": {
     "@babel/runtime-corejs3": "^7.4.4",
-    "ky": "^0.9.0"
+    "ky": "^0.9.1"
   },
   "devDependencies": {
     "@ianwalter/babel-preset-lib": "^2.0.2",
