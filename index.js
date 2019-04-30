@@ -1,13 +1,36 @@
-import ky from 'ky'
+const defaults = { mode: 'same-origin' }
+const methods = [
+  'get',
+  'post',
+  'put',
+  'delete'
+]
 
-class Http {
-  constructor () {
-    this.ky = ky
+export class Http {
+  constructor (options = {}) {
+    this.options = Object.assign(defaults, options)
+
+    methods.forEach(method => {
+      this[method] = async (url, options) => this.fetch(method, url, options)
+    })
   }
 
-  replace (newKy) {
-    this.ky = newKy
+  async fetch (method, url, options = {}) {
+    const init = { method, ...this.options, ...options }
+    const response = await window.fetch(url, init)
+    if (response.ok) {
+      const contentType = response.headers.get('Content-Type')
+      const isJson = contentType && contentType.indexOf('application/json') > -1
+      if (response.body && isJson) {
+        return { ...response, body: await response.json() }
+      } else if (response.body) {
+        return { ...response, body: await response.text() }
+      }
+      return response
+    } else {
+      // TODO: throw error
+    }
   }
 }
 
-export default new Http()
+export const http = new Http()

@@ -2,9 +2,9 @@ import test from 'ava'
 import puppeteerHelper from '@ianwalter/puppeteer-helper'
 import createTestServer from '@ianwalter/test-server'
 
-const withPage = puppeteerHelper()
+const withPage = puppeteerHelper({ devtools: true })
 
-test('replace', withPage, async t => {
+test.skip('replace', withPage, async t => {
   t.true(await t.evaluate('./evals/replace.js'))
 })
 
@@ -22,7 +22,7 @@ test('GET request', withPage, async t => {
   await server.close()
 })
 
-test('400 response throws HTTPError', withPage, async t => {
+test.skip('400 response throws HTTPError', withPage, async t => {
   // Set up the mock server.
   const server = await createTestServer()
   server.use(ctx => (ctx.status = 400))

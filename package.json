@@ -1,18 +1,18 @@
 {
   "name": "@ianwalter/http",
   "version": "2.1.2",
-  "description": "A transpiled global instance of ky (the fetch-based HTTP client)",
+  "description": "A convenience wrapper around the fetch API",
   "browser": "dist/http.js",
   "main": "dist/http.js",
   "scripts": {
     "lint": "eslint index.js test.js",
-    "pretest": "dist --inline ky --babel --no-cjs",
+    "pretest": "dist --babel --no-cjs",
     "test": "ava"
   },
   "keywords": [
     "http",
     "fetch",
-    "ky"
+    "request"
   ],
   "author": "Ian Walter <public@iankwalter.com> (https://iankwalter.com)",
   "license": "SEE LICENSE IN LICENSE",
@@ -28,8 +28,7 @@
   },
   "homepage": "https://github.com/ianwalter/http#readme",
   "dependencies": {
-    "@babel/runtime-corejs3": "^7.4.4",
-    "ky": "^0.9.0"
+    "@babel/runtime-corejs3": "^7.4.4"
   },
   "devDependencies": {
     "@ianwalter/babel-preset-lib": "^2.0.2",
