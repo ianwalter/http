@@ -959,16 +959,6 @@
   dependencies:
     camelcase "^5.0.0"
 
-"@ianwalter/print@^2.3.0":
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/@ianwalter/print/-/print-2.3.0.tgz#12e2a11ca3e622e98069f1ca824c6edb3f4c47cb"
-  integrity sha512-JBysj0+79suEX/GT14xtuc+3MaaShPvo6U4LFuxsldGRvClYJYfG+c4VqZMJ18TwDYrd3ImVKQ4apKSyAOmVHQ==
-  dependencies:
-    "@ianwalter/log" "^3.0.0"
-    chalk "^2.4.2"
-    has-ansi "^3.0.0"
-    has-emoji "^1.0.0"
-
 "@ianwalter/print@^2.3.1":
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/@ianwalter/print/-/print-2.3.1.tgz#36e3ed258a9333f39d45e18e2297f987685b8c3d"
@@ -1009,12 +999,12 @@
     "@babel/runtime" "^7.3.1"
     patrun "^1.0.0"
 
-"@ianwalter/test-server@^1.4.2":
-  version "1.4.2"
-  resolved "https://registry.yarnpkg.com/@ianwalter/test-server/-/test-server-1.4.2.tgz#e98d151645576e8ddd7c4e92368bd58afa89c149"
-  integrity sha512-ocURZiPrfB8QFb7NYTFFEPA2112eRvIgAnWaqMQdZ4UCe9xJKPu8SZhAlUTv1atbW5oQGYqLTppguuJQRGoJBA==
+"@ianwalter/test-server@^1.4.3":
+  version "1.4.3"
+  resolved "https://registry.yarnpkg.com/@ianwalter/test-server/-/test-server-1.4.3.tgz#993d766c322d7022323833912fdb65c96106ab7f"
+  integrity sha512-9n2/f2OPCGZzOzaE9C9IixPsJ2THXOGTvzLvQ11M2rgD9tQqko08TglV69/X9ChZoesepAaE1zhoEi7dgSpnNQ==
   dependencies:
-    "@ianwalter/print" "^2.3.0"
+    "@ianwalter/print" "^2.3.1"
     koa "^2.7.0"
     koa-bodyparser "^4.2.1"
     koa-json "^2.0.2"
