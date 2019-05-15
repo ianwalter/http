@@ -33,10 +33,10 @@
   },
   "devDependencies": {
     "@ianwalter/babel-preset-lib": "^2.0.2",
-    "@ianwalter/dist": "^3.1.0",
+    "@ianwalter/dist": "^4.0.0",
     "@ianwalter/eslint-config": "^1.1.2",
     "@ianwalter/renovate-config": "^1.1.0",
-    "@ianwalter/test-server": "^1.4.2",
+    "@ianwalter/test-server": "^1.4.3",
     "np": "^5.0.1"
   },
   "browserslist": "> 2%, not dead",
