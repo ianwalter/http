@@ -17,41 +17,53 @@ export class Http {
   constructor (options = {}) {
     this.options = options
 
+    // TODO:
     methods.forEach(method => {
       this[method] = async (url, options) => this.fetch(method, url, options)
     })
   }
 
   async fetch (method, url, options = {}) {
+    // TODO:
     const init = { method, headers: {}, ...this.options, ...options }
     init.headers = new window.Headers(init.headers)
 
+    // TODO:
     if (typeof init.body === 'object') {
       init.headers.append('Content-Type', 'application/json')
       init.body = JSON.stringify(init.body)
     }
 
+    // TODO:
     if (init.baseUrl) {
       url = init.baseUrl + url
       delete init.baseUrl
     }
 
-    const response = await window.fetch(url, init)
-    const packagedResponse = { ...response }
-
-    //
-    const contentType = response.headers.get('Content-Type')
-    const isJson = contentType && contentType.indexOf('application/json') > -1
-    if (response.body && isJson) {
-      packagedResponse.body = await response.json()
-    } else if (response.body) {
-      packagedResponse.body = await response.text()
+    // TODO:
+    const fetchResponse = await window.fetch(url, init)
+    const response = {
+      ...fetchResponse,
+      headers: fetchResponse.headers,
+      ok: fetchResponse.ok,
+      status: fetchResponse.status,
+      statusText: fetchResponse.statusText
     }
 
+    // TODO:
+    const contentType = response.headers.get('Content-Type')
+    const isJson = contentType && contentType.indexOf('application/json') > -1
+    if (fetchResponse.body && isJson) {
+      response.body = await fetchResponse.json()
+    } else if (fetchResponse.body) {
+      response.body = await fetchResponse.text()
+    }
+
+    // TODO:
     if (response.ok) {
-      return packagedResponse
+      return response
     } else {
-      throw new HttpError(packagedResponse)
+      throw new HttpError(response)
     }
   }
 }
