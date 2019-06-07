@@ -1,18 +1,18 @@
 {
   "name": "@ianwalter/http",
   "version": "2.1.2",
-  "description": "A transpiled global instance of ky (the fetch-based HTTP client)",
+  "description": "A convenience wrapper around the fetch API",
   "browser": "dist/http.js",
   "main": "dist/http.js",
   "scripts": {
-    "lint": "eslint index.js test.js",
-    "pretest": "dist --inline ky --babel --no-cjs",
-    "test": "ava"
+    "lint": "eslint index.js tests",
+    "pretest": "dist --babel --no-cjs",
+    "test": "bff"
   },
   "keywords": [
     "http",
     "fetch",
-    "ky"
+    "request"
   ],
   "author": "Ian Walter <public@iankwalter.com> (https://iankwalter.com)",
   "license": "SEE LICENSE IN LICENSE",
@@ -29,22 +29,27 @@
   "homepage": "https://github.com/ianwalter/http#readme",
   "dependencies": {
     "@babel/runtime-corejs3": "^7.4.4",
-    "ky": "^0.9.0"
+    "@ianwalter/clone": "^3.0.0"
   },
   "devDependencies": {
     "@ianwalter/babel-preset-lib": "^2.0.2",
+    "@ianwalter/bff": "^5.2.1",
     "@ianwalter/dist": "^4.0.0",
     "@ianwalter/eslint-config": "^2.0.1",
     "@ianwalter/puppeteer-helper": "^3.0.0",
     "@ianwalter/renovate-config": "^1.1.0",
     "@ianwalter/test-server": "^1.4.3",
-    "ava": "^1.4.1",
     "np": "^5.0.3"
   },
   "browserslist": "> 2%, not dead",
   "babel": {
     "presets": [
       "@ianwalter/lib"
+    ]
+  },
+  "bff": {
+    "plugins": [
+      "tests/config.js"
     ]
   },
   "eslintConfig": {
