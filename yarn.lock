@@ -870,6 +870,13 @@
   resolved "https://registry.yarnpkg.com/@ianwalter/log/-/log-3.0.0.tgz#c85f7343e28e98d0a4c872a42e6bdd6d8b302e8d"
   integrity sha512-CAB1LaZUDUvQexuZYXmRhaFrpNqguIwA+ciB8+uvDm9dakNX3H+Yd7VIOisvx/y4GljH2hSrlTfCzhy14/0/YQ==
 
+"@ianwalter/merge@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@ianwalter/merge/-/merge-2.0.1.tgz#80d87df43c0626896981e0793ff93a4b8db4e45b"
+  integrity sha512-EU5xWA1ABUBMwSXs3fQUYQpugfkBV/trr+SpN7mVh6dVyu+8dhl7Ma+KYPIbE7I8Xs5Hr9k9Ollz8juN0Hw59Q==
+  dependencies:
+    "@babel/runtime" "^7.3.1"
+
 "@ianwalter/merge@^3.0.0":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@ianwalter/merge/-/merge-3.0.0.tgz#f2b88f73d7491e1d1f13a4cfd35a8dc452c0ad5e"
@@ -894,11 +901,12 @@
     has-ansi "^3.0.0"
     has-emoji "^1.0.0"
 
-"@ianwalter/puppeteer-helper@^3.0.0":
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/@ianwalter/puppeteer-helper/-/puppeteer-helper-3.2.0.tgz#50ab2a0f3554fc3668b856bab3a98cba8c01895a"
-  integrity sha512-5Sz3ZeUuM9ZkT/6UFC6T8famDdrhRdx17MRHNiBXEkobPLwAIOx7QM7JfR9Jlm6w6yD+dV6sHirTHJSYwUSejA==
+"@ianwalter/puppeteer-helper@^4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@ianwalter/puppeteer-helper/-/puppeteer-helper-4.0.0.tgz#b3da0ca9fce9210d53e31a39c13a5fc92f6f1bbb"
+  integrity sha512-ThLWCWY6oQFUfxmCcGAE72c7IHC/qTMR0nEXgC3o6JcwylvXSrV7V/m3e/fmG1whE8h2AsJQE1k1jwXOmREC5A==
   dependencies:
+    "@ianwalter/merge" "^2.0.1"
     memory-fs "^0.4.1"
     prettydiff "^100.2.3"
     puppeteer "^1.11.0"

@@ -36,7 +36,7 @@
     "@ianwalter/bff": "^5.2.1",
     "@ianwalter/dist": "^4.0.0",
     "@ianwalter/eslint-config": "^2.0.1",
-    "@ianwalter/puppeteer-helper": "^3.0.0",
+    "@ianwalter/puppeteer-helper": "^4.0.0",
     "@ianwalter/renovate-config": "^1.1.0",
     "@ianwalter/test-server": "^1.4.3",
     "np": "^5.0.3"
