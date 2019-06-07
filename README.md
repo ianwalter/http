@@ -12,13 +12,13 @@ yarn add @ianwalter/http
 ## Usage
 
 ```js
-import http from '@ianwalter/http'
+import { http } from '@ianwalter/http'
 
-// Update the ky instance to add a new header globally.
-http.update(http.ky.extend({ headers: { 'csrf-token': 'abc123' } }))
+// Add a new header to the global http instance.
+http.options.headers = { 'csrf-token': 'abc123' }
 
-// Use ky to post some data.
-const response = await http.ky.post('/api/thing', { json: { complete: true } })
+// Send a POST request with some data.
+const response = await http.post('/api/thing', { json: { complete: true } })
 ```
 
 ## License
