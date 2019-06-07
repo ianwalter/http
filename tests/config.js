@@ -20,10 +20,7 @@ module.exports = {
         ctx.body = ctx.request.path
       }
     })
-    context.testServerUrl = testServer.url
-  },
-  beforeEach (context) {
-    context.testContext.testServerUrl = context.testServerUrl
+    context.testContext.testServerUrl = testServer.url
   },
   async after () {
     await testServer.close()
