@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/ianwalter/http#readme",
   "dependencies": {
-    "@babel/runtime-corejs3": "^7.4.4",
+    "@babel/runtime-corejs3": "^7.4.5",
     "@ianwalter/clone": "^3.0.0"
   },
   "devDependencies": {
