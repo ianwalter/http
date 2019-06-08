@@ -1,6 +1,6 @@
 {
   "name": "@ianwalter/http",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "description": "A convenience wrapper around the fetch API",
   "browser": "dist/http.js",
   "main": "dist/http.js",
