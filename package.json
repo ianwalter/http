@@ -2,11 +2,9 @@
   "name": "@ianwalter/http",
   "version": "4.0.0",
   "description": "A convenience wrapper around the fetch API",
-  "browser": "dist/http.js",
-  "main": "dist/http.js",
+  "main": "index.js",
   "scripts": {
     "lint": "eslint index.js tests",
-    "pretest": "dist --browser",
     "test": "bff"
   },
   "keywords": [
@@ -17,7 +15,7 @@
   "author": "Ian Walter <public@iankwalter.com> (https://iankwalter.com)",
   "license": "SEE LICENSE IN LICENSE",
   "files": [
-    "dist"
+    "index.js"
   ],
   "repository": {
     "type": "git",
@@ -27,12 +25,8 @@
     "url": "https://github.com/ianwalter/http/issues"
   },
   "homepage": "https://github.com/ianwalter/http#readme",
-  "dependencies": {
-    "@ianwalter/clone": "^3.0.0"
-  },
   "devDependencies": {
     "@ianwalter/bff": "^5.2.1",
-    "@ianwalter/dist": "^5.0.0",
     "@ianwalter/eslint-config": "^2.0.1",
     "@ianwalter/renovate-config": "^1.1.0",
     "@ianwalter/test-server": "^1.4.3",
@@ -48,10 +42,7 @@
     "root": true,
     "extends": [
       "@ianwalter"
-    ],
-    "globals": {
-      "http": true
-    }
+    ]
   },
   "renovate": {
     "extends": [
