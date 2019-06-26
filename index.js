@@ -58,10 +58,14 @@ export class Http {
     // the response, otherwise parse it as text.
     const contentType = response.headers.get('Content-Type')
     const isJson = contentType && contentType.indexOf('application/json') > -1
-    if (fetchResponse.body && isJson) {
-      response.body = await fetchResponse.json()
-    } else if (fetchResponse.body) {
-      response.body = await fetchResponse.text()
+    try {
+      if (isJson) {
+        response.body = await fetchResponse.json()
+      } else {
+        response.body = await fetchResponse.text()
+      }
+    } catch (err) {
+      console.error(err)
     }
 
     // If the response is OK, return the response, otherwise return an HTTPError
