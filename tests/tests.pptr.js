@@ -1,4 +1,4 @@
-import { test } from '@ianwalter/bff'
+import { test } from '@ianwalter/bff-puppeteer'
 import { http, HttpError } from '..'
 
 test('GET json', async ({ expect, testServerUrl }) => {
