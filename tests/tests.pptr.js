@@ -2,8 +2,7 @@ import { test } from '@ianwalter/bff-puppeteer'
 import { http, HttpError } from '..'
 
 test('GET json', async ({ expect, testServerUrl }) => {
-  const url = `${testServerUrl}/hello-world`
-  const { body } = await http.get(url)
+  const { body } = await http.get(`${testServerUrl}/hello-world`)
   expect(body).toEqual({ msg: 'Hello World!' })
 })
 
@@ -22,17 +21,15 @@ test('POST json', async ({ expect, testServerUrl }) => {
 })
 
 test('GET with request header', async ({ expect, testServerUrl }) => {
-  const url = `${testServerUrl}/request-header`
   const token = 'Bearer 123'
   http.options.headers = { 'Authorization': token }
-  const { body } = await http.get(url)
+  const { body } = await http.get(`${testServerUrl}/request-header`)
   expect(body).toBe(token)
 })
 
 test('500 response throws HttpError', async ({ expect, testServerUrl }) => {
-  const url = `${testServerUrl}/error`
   try {
-    await http.get(url)
+    await http.get(`${testServerUrl}/error`)
   } catch (err) {
     console.log(err)
     expect(err instanceof HttpError).toBe(true)
@@ -46,4 +43,9 @@ test('baseUrl', async ({ expect, testServerUrl }) => {
   const path = '/i-am-a-path'
   const { body } = await http.get(path)
   expect(body).toBe(path)
+})
+
+test('manual JSON', async ({ expect, testServerUrl }) => {
+  const { body } = await http.get(`${testServerUrl}//manual-json`)
+  expect(body.song).toBe('Gulf Shores')
 })

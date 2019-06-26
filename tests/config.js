@@ -18,6 +18,9 @@ module.exports = {
         ctx.status = 500
       } else if (ctx.request.path.includes('/i-am-a-path')) {
         ctx.body = ctx.request.path
+      } else if (ctx.request.path.includes('/manual-json')) {
+        ctx.set('content-type', 'application/json; charset=utf-8')
+        ctx.body = '{ "song": "Gulf Shores" }'
       }
     })
     context.testContext.testServerUrl = testServer.url
