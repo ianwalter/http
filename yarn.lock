@@ -177,12 +177,12 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
-"@ianwalter/bff-puppeteer@^1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@ianwalter/bff-puppeteer/-/bff-puppeteer-1.1.1.tgz#d062199920279a28b8309f2774729a2fec6a68ae"
-  integrity sha512-XzCaNkI7gnVpYN28nGbw6lBBlCygdU5oZeA4zfrP1YRZRdnvZum0WGZ9mCd6CxKpf9FjVT5Da+Nw0bnDEsShbA==
+"@ianwalter/bff-puppeteer@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@ianwalter/bff-puppeteer/-/bff-puppeteer-1.2.0.tgz#04016f91fec39b3dee27d15e95bb0c731e51c887"
+  integrity sha512-t11ag9kX8XPeCYL90ta/k98JbWY96isDMHhcbr6bLvy2GXsSTHNRAJiDoHhdXryBm+1nYYm/KWBwaexAfH+1iA==
   dependencies:
-    "@ianwalter/bff" "^6.2.1"
+    "@ianwalter/bff" "^6.3.1"
     "@ianwalter/merge" "^4.0.0"
     "@ianwalter/print" "^3.0.1"
     common-tags "^1.8.0"
@@ -207,10 +207,10 @@
     p-timeout "^3.1.0"
     workerpool "^3.1.2"
 
-"@ianwalter/bff@^6.2.1":
-  version "6.2.1"
-  resolved "https://registry.yarnpkg.com/@ianwalter/bff/-/bff-6.2.1.tgz#bef836af5315f69e11fdeb27e528e75137da44c7"
-  integrity sha512-GsxyJdRVK0ZRe8nTPsfveSz9vhlJgYgzNygIBa/CN2Oeq9wtNx530Z/hGyQdqh1cc5noSstuy36j6OUa/E5g8Q==
+"@ianwalter/bff@^6.3.1":
+  version "6.3.1"
+  resolved "https://registry.yarnpkg.com/@ianwalter/bff/-/bff-6.3.1.tgz#7f426ab5b93b5d28bb7d72ea91a482b638fa7ea2"
+  integrity sha512-33OLydTrvMSS7rFwDOkCn2a3+FTckQLdR5WVM6KQQscU/q7UuBrN4bNTVlrlTWF4M+omzr0cvDkgKY5SVKa8Bg==
   dependencies:
     "@ianwalter/cli" "^1.1.1"
     "@ianwalter/print" "^3.0.1"
