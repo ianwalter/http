@@ -177,17 +177,17 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
-"@ianwalter/bff-puppeteer@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@ianwalter/bff-puppeteer/-/bff-puppeteer-1.1.0.tgz#de03f0db4eae0ec1ddcc400345d9004073591ac6"
-  integrity sha512-wL7HOVeWyIpLW6mS4DZEEpyQPeBS1/S8s3nc4IQJw+M//QRjv/owm75l2e9p/+wgShMV+w7cLqvV+aL/zbVjeg==
+"@ianwalter/bff-puppeteer@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@ianwalter/bff-puppeteer/-/bff-puppeteer-1.1.1.tgz#d062199920279a28b8309f2774729a2fec6a68ae"
+  integrity sha512-XzCaNkI7gnVpYN28nGbw6lBBlCygdU5oZeA4zfrP1YRZRdnvZum0WGZ9mCd6CxKpf9FjVT5Da+Nw0bnDEsShbA==
   dependencies:
-    "@ianwalter/bff" "^6.2.0"
+    "@ianwalter/bff" "^6.2.1"
     "@ianwalter/merge" "^4.0.0"
-    "@ianwalter/print" "^3.0.0"
+    "@ianwalter/print" "^3.0.1"
     common-tags "^1.8.0"
     fs-remote "^0.1.9"
-    puppeteer "^1.18.0"
+    puppeteer "^1.18.1"
     tempy "^0.3.0"
     webpack "^4.35.0"
 
@@ -198,6 +198,22 @@
   dependencies:
     "@ianwalter/cli" "^1.1.1"
     "@ianwalter/print" "^3.0.0"
+    common-tags "^1.8.0"
+    expect "^24.8.0"
+    globby "^9.2.0"
+    jest-snapshot "^24.8.0"
+    junit-report-builder "^1.3.2"
+    p-series "^2.1.0"
+    p-timeout "^3.1.0"
+    workerpool "^3.1.2"
+
+"@ianwalter/bff@^6.2.1":
+  version "6.2.1"
+  resolved "https://registry.yarnpkg.com/@ianwalter/bff/-/bff-6.2.1.tgz#bef836af5315f69e11fdeb27e528e75137da44c7"
+  integrity sha512-GsxyJdRVK0ZRe8nTPsfveSz9vhlJgYgzNygIBa/CN2Oeq9wtNx530Z/hGyQdqh1cc5noSstuy36j6OUa/E5g8Q==
+  dependencies:
+    "@ianwalter/cli" "^1.1.1"
+    "@ianwalter/print" "^3.0.1"
     common-tags "^1.8.0"
     expect "^24.8.0"
     globby "^9.2.0"
@@ -268,6 +284,17 @@
     "@ianwalter/log" "^3.0.0"
     chalk "^2.4.2"
     chromafi "^2.1.0"
+    has-ansi "^3.0.0"
+    has-emoji "^1.0.0"
+
+"@ianwalter/print@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@ianwalter/print/-/print-3.0.1.tgz#73d81f83fcb6366331704985e0c7ebe8c914a812"
+  integrity sha512-g2QKEUaOuhKR2WdY0nPXbBPA1KifKAH/9u47JdIIizkJQB+Mq1Pd6yLRKiaEQWQCUiPag3gIch+2YHVC4M1nPQ==
+  dependencies:
+    "@ianwalter/log" "^3.0.0"
+    chalk "^2.4.2"
+    chromafi ianwalter/chromafi
     has-ansi "^3.0.0"
     has-emoji "^1.0.0"
 
@@ -1271,6 +1298,26 @@ chromafi@^2.1.0:
     he "^1.1.1"
     highlight.js "^9.12.0"
     husky "^0.14.3"
+    min-indent "^1.0.0"
+    strip-ansi "^4.0.0"
+    strip-indent "^2.0.0"
+    super-split "^1.1.0"
+
+chromafi@ianwalter/chromafi:
+  version "2.1.0"
+  uid "5fc4e4335f56501152bfa339f7e7c1f2c785959c"
+  resolved "https://codeload.github.com/ianwalter/chromafi/tar.gz/5fc4e4335f56501152bfa339f7e7c1f2c785959c"
+  dependencies:
+    ansi-mark "^1.0.0"
+    ansi-regex "^3.0.0"
+    array-uniq "^1.0.3"
+    camelcase "^4.1.0"
+    chalk "^2.3.2"
+    cheerio "^1.0.0-rc.2"
+    deepmerge "^2.1.0"
+    detect-indent "^5.0.0"
+    he "^1.1.1"
+    highlight.js "^9.12.0"
     min-indent "^1.0.0"
     strip-ansi "^4.0.0"
     strip-indent "^2.0.0"
@@ -4950,10 +4997,10 @@ punycode@^2.1.0:
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.1.1.tgz#b58b010ac40c22c5657616c8d2c2c02c7bf479ec"
   integrity sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==
 
-puppeteer@^1.18.0:
-  version "1.18.0"
-  resolved "https://registry.yarnpkg.com/puppeteer/-/puppeteer-1.18.0.tgz#227bccc52806db37b3ccf762a7d95c06163f296e"
-  integrity sha512-NCwSN4wEIj43k4jO8Asa5nzibrIDFHWykqkZFjkGr0/f6U73k1ysql0gadQmOGLtZewXvvWqlNo+4ZMgX+5vZA==
+puppeteer@^1.18.1:
+  version "1.18.1"
+  resolved "https://registry.yarnpkg.com/puppeteer/-/puppeteer-1.18.1.tgz#4a66f3bdab01115ededf70443ec904c99917a815"
+  integrity sha512-luUy0HPSuWPsPZ1wAp6NinE0zgetWtudf5zwZ6dHjMWfYpTQcmKveFRox7VBNhQ98OjNA9PQ9PzQyX8k/KrxTg==
   dependencies:
     debug "^4.1.0"
     extract-zip "^1.6.6"
