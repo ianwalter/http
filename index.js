@@ -15,7 +15,14 @@ export class HttpError extends Error {
 
 export class Http {
   constructor (options = {}) {
-    this.options = options
+    this.options = Object.assign(
+      {
+        credentials: 'same-origin' // NOTE: This default is not implemented in
+        // all browsers yet. Context:
+        // https://www.chromestatus.com/feature/4539473312350208
+      },
+      options
+    )
 
     // Create an insutance method for each HTTP method and just calls the
     // general fetch method with the HTTP method as the first argument.
