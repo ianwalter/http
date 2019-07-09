@@ -34,6 +34,7 @@ test('500 response throws HttpError', async ({ expect, testServerUrl }) => {
     console.log(err)
     expect(err instanceof HttpError).toBe(true)
     expect(err.response.status).toBe(500)
+    expect(err.message).toBe('Internal Server Error')
     expect(err.response.statusText).toBe('Internal Server Error')
   }
 })
@@ -46,6 +47,23 @@ test('baseUrl', async ({ expect, testServerUrl }) => {
 })
 
 test('manual JSON', async ({ expect, testServerUrl }) => {
-  const { body } = await http.get(`${testServerUrl}//manual-json`)
+  const { body } = await http.get(`${testServerUrl}/manual-json`)
   expect(body.song).toBe('Gulf Shores')
+})
+
+test('intercepting response', async ({ expect, testServerUrl }) => {
+  http.after = (url, init, response) => ({
+    ...response,
+    ok: false,
+    status: 401,
+    statusText: 'Unauthorized'
+  })
+  try {
+    await http.get(`${testServerUrl}/hello-world`)
+  } catch (err) {
+    expect(err instanceof HttpError).toBe(true)
+    expect(err.response.status).toBe(401)
+    expect(err.message).toBe('Unauthorized')
+    expect(err.response.statusText).toBe('Unauthorized')
+  }
 })

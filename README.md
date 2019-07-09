@@ -21,6 +21,17 @@ http.options.headers = { 'csrf-token': 'abc123' }
 const response = await http.post('/api/thing', { json: { complete: true } })
 ```
 
+## Intercepting requests and responses
+
+```js
+http.after = (url, init, response) => ({
+  ...response,
+  ok: false,
+  status: 401,
+  statusText: 'Unauthorized'
+})
+```
+
 ## License
 
 Apache 2.0 with Commons Clause - See [LICENSE][licenseUrl]

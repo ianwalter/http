@@ -34,7 +34,7 @@ export class Http {
   async fetch (method, url, options = {}) {
     // Create the init options based on some simple defaults, the options set
     // during class instantiation, and the options passed to the HTTP method.
-    const init = { method, headers: {}, ...this.options, ...options }
+    let init = { method, headers: {}, ...this.options, ...options }
     init.headers = new window.Headers(init.headers)
 
     // If the given request body is a JavaScript Object, automatically stringify
@@ -50,10 +50,14 @@ export class Http {
       delete init.baseUrl
     }
 
+    if (this.before) {
+      init = await this.before(url, init)
+    }
+
     // Make the request using the fetch API and construct a custom response
     // Object.
     const fetchResponse = await window.fetch(url, init)
-    const response = {
+    let response = {
       ...fetchResponse,
       headers: fetchResponse.headers,
       ok: fetchResponse.ok,
@@ -75,6 +79,10 @@ export class Http {
       console.error(err)
     }
 
+    if (this.after) {
+      response = await this.after(url, init, response)
+    }
+
     // If the response is OK, return the response, otherwise return an HTTPError
     // instance with the response.
     if (response.ok) {
@@ -86,3 +94,10 @@ export class Http {
 }
 
 export const http = new Http()
+
+// If the window object is defined, add http to it.
+if (typeof window !== 'undefined') {
+  window.HttpError = HttpError
+  window.Http = Http
+  window.http = http
+}
