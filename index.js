@@ -50,6 +50,8 @@ export class Http {
       delete init.baseUrl
     }
 
+    // If a before hook exists, call it with the request info before the request
+    // is made, and use the return value as the new init object.
     if (this.before) {
       init = await this.before(url, init)
     }
@@ -79,6 +81,8 @@ export class Http {
       console.error(err)
     }
 
+    // If a after hook exists, call it with the request and response info after
+    // the request is made, and use the return value as the new response object.
     if (this.after) {
       response = await this.after(url, init, response)
     }
