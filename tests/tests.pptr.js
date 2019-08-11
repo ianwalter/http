@@ -22,7 +22,7 @@ test('POST json', async ({ expect, testServerUrl }) => {
 
 test('GET with request header', async ({ expect, testServerUrl }) => {
   const token = 'Bearer 123'
-  http.options.headers = { 'Authorization': token }
+  http.options.headers = { Authorization: token }
   const { body } = await http.get(`${testServerUrl}/request-header`)
   expect(body).toBe(token)
 })
