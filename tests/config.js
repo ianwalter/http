@@ -1,10 +1,10 @@
-const createTestServer = require('@ianwalter/test-server')
+const { createKoaServer } = require('@ianwalter/test-server')
 
 let testServer
 
 module.exports = {
   async before (context) {
-    testServer = await createTestServer()
+    testServer = await createKoaServer()
     testServer.use(ctx => {
       if (ctx.request.path.includes('/hello-world')) {
         if (ctx.request.method === 'POST') {
