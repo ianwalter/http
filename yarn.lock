@@ -156,13 +156,13 @@
     p-series "^2.1.0"
     workerpool "^3.1.2"
 
-"@ianwalter/bff@^6.5.0":
-  version "6.5.0"
-  resolved "https://registry.yarnpkg.com/@ianwalter/bff/-/bff-6.5.0.tgz#12445901a0926fdd2bc50a760e52873d49bd7647"
-  integrity sha512-9a8V/RhtPfISh7Oo+B9Mq2OO+6Upo0bzarH8NphiCcCkpfuG3MdCy/4t7pMV/HrgiHgM9Uqd8Km4YuilNPQDlw==
+"@ianwalter/bff@^6.5.1":
+  version "6.5.1"
+  resolved "https://registry.yarnpkg.com/@ianwalter/bff/-/bff-6.5.1.tgz#6c6c1439bb0eb3e21a1d77fdebb130f71ae97c6a"
+  integrity sha512-ETmcrqgb9vuNZTDNUCvQGZUk5/oILq94B2qCmy9C2913Cg6q/qmbRZY7b2kgrkUnPR5pCcj6Q9yHKCHru9HxeA==
   dependencies:
     "@ianwalter/cli" "^1.2.0"
-    "@ianwalter/print" "^3.2.0"
+    "@ianwalter/print" "^3.3.1"
     "@ianwalter/timer" "^1.1.0"
     common-tags "^1.8.0"
     expect "^24.9.0"
