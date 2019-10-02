@@ -66,7 +66,7 @@ export class Http {
       status: fetchResponse.status,
       statusText: fetchResponse.statusText,
       blob: fetchResponse.blob.bind(fetchResponse),
-      text: fetchResponse.blob.bind(fetchResponse)
+      text: fetchResponse.text.bind(fetchResponse)
     }
 
     // If there is a JSON content-type response header, automatically JSON-parse
