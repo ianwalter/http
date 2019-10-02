@@ -67,3 +67,9 @@ test('intercepting response', async ({ expect, testServerUrl }) => {
     expect(err.response.statusText).toBe('Unauthorized')
   }
 })
+
+test('blob', async ({ expect, testServerUrl }) => {
+  const response = await http.get(`${testServerUrl}/cat.gif`)
+  const body = await response.blob()
+  expect(await body.text()).toMatchSnapshot()
+})

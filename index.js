@@ -64,17 +64,20 @@ export class Http {
       headers: fetchResponse.headers,
       ok: fetchResponse.ok,
       status: fetchResponse.status,
-      statusText: fetchResponse.statusText
+      statusText: fetchResponse.statusText,
+      blob: fetchResponse.blob.bind(fetchResponse),
+      text: fetchResponse.blob.bind(fetchResponse)
     }
 
     // If there is a JSON content-type response header, automatically JSON-parse
     // the response, otherwise parse it as text.
     const contentType = response.headers.get('Content-Type')
     const isJson = contentType && contentType.indexOf('application/json') > -1
+    const isText = contentType && contentType.indexOf('text/') === 0
     try {
       if (isJson) {
         response.body = await fetchResponse.json()
-      } else {
+      } else if (isText) {
         response.body = await fetchResponse.text()
       }
     } catch (err) {

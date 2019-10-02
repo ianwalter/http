@@ -1,3 +1,5 @@
+const { promises: fs } = require('fs')
+const path = require('path')
 const { createKoaServer } = require('@ianwalter/test-server')
 
 let testServer
@@ -5,7 +7,7 @@ let testServer
 module.exports = {
   async before (context) {
     testServer = await createKoaServer()
-    testServer.use(ctx => {
+    testServer.use(async ctx => {
       if (ctx.request.path.includes('/hello-world')) {
         if (ctx.request.method === 'POST') {
           ctx.body = ctx.request.body
@@ -21,6 +23,8 @@ module.exports = {
       } else if (ctx.request.path.includes('/manual-json')) {
         ctx.set('content-type', 'application/json; charset=utf-8')
         ctx.body = '{ "song": "Gulf Shores" }'
+      } else if (ctx.request.path.includes('/cat.gif')) {
+        ctx.body = await fs.readFile(path.join(__dirname, 'fixtures/cat.gif'))
       }
     })
     context.testContext.testServerUrl = testServer.url
