@@ -73,3 +73,17 @@ test('blob', async ({ expect, testServerUrl }) => {
   const body = await response.blob()
   expect(await body.text()).toMatchSnapshot()
 })
+
+test('abort', async ({ expect, testServerUrl }) => {
+  return new Promise(resolve => {
+    const controller = new window.AbortController()
+    http
+      .get(`${testServerUrl}/hello-world`, { signal: controller.signal })
+      .catch(err => {
+        console.log('err', err)
+        expect(err.name).toBe('AbortError')
+        resolve()
+      })
+    controller.abort()
+  })
+})
