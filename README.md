@@ -18,7 +18,7 @@ import { http } from '@ianwalter/http'
 http.options.headers = { 'csrf-token': 'abc123' }
 
 // Send a POST request with some data.
-const response = await http.post('/api/thing', { json: { complete: true } })
+const response = await http.post('/api/thing', { body: { complete: true } })
 ```
 
 ## Intercepting requests and responses
