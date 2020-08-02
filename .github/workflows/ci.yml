@@ -8,7 +8,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: ianwalter/puppeteer@3.0.0
+      image: ianwalter/puppeteer:v4.0.0
     timeout-minutes: 5
     steps:
       - name: Checkout
