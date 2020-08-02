@@ -6,7 +6,7 @@
 ## Installation
 
 ```console
-yarn add @ianwalter/http
+pnpm add @ianwalter/http
 ```
 
 ## Usage

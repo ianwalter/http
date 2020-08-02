@@ -7,23 +7,17 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    container:
+      image: ianwalter/puppeteer@3.0.0
     timeout-minutes: 5
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Pnpkm
-        uses: ianwalter/puppeteer@3.0.0
-        with:
-          args: npm i -g pnpm
+      - name: Pnpm
+        run: npm i -g pnpm
       - name: Install
-        uses: ianwalter/puppeteer@3.0.0
-        with:
-          args: pnpm i
+        run: pnpm i
       - name: Lint
-        uses: ianwalter/puppeteer@3.0.0
-        with:
-          args: pnpm lint
+        run: pnpm lint
       - name: Test
-        uses: ianwalter/puppeteer@3.0.0
-        with:
-          args: pnpm t
+        run: pnpm t
