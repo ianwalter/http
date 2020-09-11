@@ -27,7 +27,9 @@ export class Http {
     // Create an instance method for each HTTP method and just calls the general
     // fetch method with the HTTP method as the first argument.
     methods.forEach(method => {
-      this[method] = async (url, options) => this.fetch(method, url, options)
+      this[method] = async function (url, options) {
+        return this.fetch(method, url, options)
+      }
     })
   }
 
