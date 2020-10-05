@@ -3,6 +3,7 @@
   "version": "5.0.3",
   "description": "A convenience wrapper around the fetch API",
   "module": "index.js",
+  "react-native": "index.js",
   "main": "empty.js",
   "scripts": {
     "lint": "eslint index.js tests",
