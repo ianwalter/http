@@ -34,7 +34,7 @@ test('500 response throws HttpError', async ({ expect, testServerUrl }) => {
     console.log(err)
     expect(err instanceof HttpError).toBe(true)
     expect(err.response.status).toBe(500)
-    expect(err.message).toBe('Internal Server Error')
+    expect(err.message).toBe('Bad response: 500 Internal Server Error')
     expect(err.response.statusText).toBe('Internal Server Error')
   }
 })
@@ -63,7 +63,7 @@ test('intercepting response', async ({ expect, testServerUrl }) => {
   } catch (err) {
     expect(err instanceof HttpError).toBe(true)
     expect(err.response.status).toBe(401)
-    expect(err.message).toBe('Unauthorized')
+    expect(err.message).toBe('Bad response: 401 Unauthorized')
     expect(err.response.statusText).toBe('Unauthorized')
   }
 })
