@@ -19,6 +19,9 @@
     "url": "https://ianwalter.dev"
   },
   "license": "SEE LICENSE IN LICENSE",
+  "publishConfig": {
+    "access": "public"
+  },
   "files": [
     "index.js"
   ],
