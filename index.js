@@ -7,7 +7,8 @@ const methods = [
 
 export class HttpError extends Error {
   constructor (response) {
-    super(response.statusText)
+    const statusText = response.statusText ? ` ${response.statusText}` : ''
+    super(`Bad response: ${response.status}${statusText}`)
     this.name = this.constructor.name
     this.response = response
   }
@@ -17,9 +18,9 @@ export class Http {
   constructor (options = {}) {
     this.options = Object.assign(
       {
-        credentials: 'same-origin' // NOTE: This default is not implemented in
-        // all browsers yet. Context:
+        // NOTE: This default is not implemented in all browsers yet. Context:
         // https://www.chromestatus.com/feature/4539473312350208
+        credentials: 'same-origin'
       },
       options
     )
@@ -54,9 +55,7 @@ export class Http {
 
     // If a before hook exists, call it with the request info before the request
     // is made, and use the return value as the new init object.
-    if (this.before) {
-      init = await this.before(url, init)
-    }
+    if (this.before) init = await this.before(url, init)
 
     // Make the request using the fetch API and construct a custom response
     // Object.
@@ -88,9 +87,7 @@ export class Http {
 
     // If a after hook exists, call it with the request and response info after
     // the request is made, and use the return value as the new response object.
-    if (this.after) {
-      response = await this.after(url, init, response)
-    }
+    if (this.after) response = await this.after(url, init, response)
 
     // If the response is OK, return the response, otherwise return an HTTPError
     // instance with the response.
