@@ -1,6 +1,6 @@
 devDependencies:
   '@changesets/cli': 2.12.0
-  '@ianwalter/bff': 9.12.2
+  '@ianwalter/bff': 9.12.3
   '@ianwalter/bff-puppeteer': 3.0.1
   '@ianwalter/eslint-config': 6.0.0
   '@ianwalter/renovate-config': 1.4.2
@@ -339,13 +339,12 @@ packages:
     dev: true
     resolution:
       integrity: sha512-zwKPlA0HgAB9KMfkuaQLN/wrwVZaG67tVY1ZJUy651JJWDStyuQ1T19FHPA29lz0OOTEOAPOn8EwM3yyk3o4dQ==
-  /@ianwalter/bff/9.12.2:
+  /@ianwalter/bff/9.12.3:
     dependencies:
       '@generates/logger': 0.0.8
       '@ianwalter/cli': 4.1.0
       '@ianwalter/clone': 6.0.1
       '@ianwalter/cloneable': 2.0.0
-      '@ianwalter/print': 8.0.6
       '@ianwalter/sleep': 0.0.1
       '@ianwalter/subpub': 3.0.0
       '@ianwalter/timer': 2.0.2
@@ -362,7 +361,7 @@ packages:
     dev: true
     hasBin: true
     resolution:
-      integrity: sha512-BlnnT1QTVJTTdWEm5cftesA3e57z1VpOn0F4kvvxpIbzziABfhJza3xf1/FiIiEbDScvRHM0LbWfysYRgW975Q==
+      integrity: sha512-e2oAW25bJdHR24bOcaFF9L43UYRFbPaeGz1gyp4Pj06p8ShEq4hHuWr8+jQXC/+YsZ8aoprxDH9jU6pX/zkFHQ==
   /@ianwalter/bff/9.8.2:
     dependencies:
       '@ianwalter/cli': 4.1.0
@@ -517,24 +516,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-Gde6yLSVtYdNQ1Lm7fLvNYb+apIzYyr4uiXaXfvn08NYQf6pRgCfiCmV+uQOczzsfnU7yWleE0dYIP2ZkDXzag==
-  /@ianwalter/print/8.0.6:
-    dependencies:
-      '@ianwalter/chromafi': 1.0.1
-      '@ianwalter/cli': 4.1.0
-      '@ianwalter/clone': 6.0.1
-      '@ianwalter/cloneable': 2.0.0
-      '@ianwalter/dot': 1.0.4
-      '@ianwalter/merge': 9.0.1
-      chalk: 4.1.0
-      has-ansi: 4.0.0
-      has-emoji: 1.1.0
-      marked: 1.1.1
-      marked-terminal: 4.1.0_marked@1.1.1
-      strip-ansi: 6.0.0
-    dev: true
-    hasBin: true
-    resolution:
-      integrity: sha512-MCRl/Oo8NrGgH9+esghyiyUBuCV4sYl1i0L64uqNq6xwFsCSw/FbiohL27ivVkXsy06nWSVa9q4xfdZpNkqzCg==
   /@ianwalter/renovate-config/1.4.2:
     dev: true
     resolution:
@@ -7039,7 +7020,7 @@ packages:
       integrity: sha512-faQrqNMzcPCHGVC2aaOINk13K+aaBDUPjGWl0teOXywElLjyVAB6Oe2jj62jHYtwsU49jXhScYbvPENK+6zAvQ==
 specifiers:
   '@changesets/cli': ^2.12.0
-  '@ianwalter/bff': ^9.12.2
+  '@ianwalter/bff': ^9.12.3
   '@ianwalter/bff-puppeteer': ^3.0.1
   '@ianwalter/eslint-config': ^6.0.0
   '@ianwalter/renovate-config': ^1.4.2
