@@ -6,10 +6,11 @@ const methods = [
 ]
 
 export class HttpError extends Error {
-  constructor (response) {
+  constructor (request, response) {
     const statusText = response.statusText ? ` ${response.statusText}` : ''
     super(`Bad response: ${response.status}${statusText}`)
     this.name = this.constructor.name
+    this.request = request
     this.response = response
   }
 }
@@ -35,10 +36,16 @@ export class Http {
   }
 
   async fetch (method, url, options = {}) {
-    // Create the init options based on some simple defaults, the options set
+    // Create the request object based on some simple defaults, the options set
     // during class instantiation, and the options passed to the HTTP method.
-    let init = { method, headers: {}, ...this.options, ...options }
-    init.headers = new window.Headers(init.headers)
+    const request = { method, url, headers: {}, ...this.options, ...options }
+
+    // Allow modification of the request object with a before hook.
+    if (this.before) await this.before(request)
+
+    // Create the init object that will be used with fetch based on the request
+    // object.
+    const init = { ...request, headers: new window.Headers(request.headers) }
 
     // If the given request body is a JavaScript Object, automatically stringify
     // it and add a JSON content-type header to the request.
@@ -53,14 +60,10 @@ export class Http {
       delete init.baseUrl
     }
 
-    // If a before hook exists, call it with the request info before the request
-    // is made, and use the return value as the new init object.
-    if (this.before) init = await this.before(url, init)
-
     // Make the request using the fetch API and construct a custom response
     // Object.
     const fetchResponse = await window.fetch(url, init)
-    let response = {
+    const response = {
       ...fetchResponse,
       headers: fetchResponse.headers,
       ok: fetchResponse.ok,
@@ -87,14 +90,14 @@ export class Http {
 
     // If a after hook exists, call it with the request and response info after
     // the request is made, and use the return value as the new response object.
-    if (this.after) response = await this.after(url, init, response)
+    if (this.after) await this.after(request, response)
 
     // If the response is OK, return the response, otherwise return an HTTPError
     // instance with the response.
     if (response.ok) {
       return response
     } else {
-      throw new HttpError(response)
+      throw new HttpError(request, response)
     }
   }
 }

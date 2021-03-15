@@ -28,11 +28,12 @@ test('GET with request header', async ({ expect, testServerUrl }) => {
 })
 
 test('500 response throws HttpError', async ({ expect, testServerUrl }) => {
+  const url = `${testServerUrl}/error`
   try {
-    await http.get(`${testServerUrl}/error`)
+    await http.get(url)
   } catch (err) {
-    console.log(err)
     expect(err instanceof HttpError).toBe(true)
+    expect(err.request.url).toBe(url)
     expect(err.response.status).toBe(500)
     expect(err.message).toBe('Bad response: 500 Internal Server Error')
     expect(err.response.statusText).toBe('Internal Server Error')
@@ -52,12 +53,11 @@ test('manual JSON', async ({ expect, testServerUrl }) => {
 })
 
 test('intercepting response', async ({ expect, testServerUrl }) => {
-  http.after = (url, init, response) => ({
-    ...response,
-    ok: false,
-    status: 401,
-    statusText: 'Unauthorized'
-  })
+  http.after = (request, response) => {
+    response.ok = false
+    response.status = 401
+    response.statusText = 'Unauthorized'
+  }
   try {
     await http.get(`${testServerUrl}/hello-world`)
   } catch (err) {
