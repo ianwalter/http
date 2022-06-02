@@ -1,6 +1,6 @@
 {
   "name": "@ianwalter/http",
-  "version": "7.0.0",
+  "version": "7.0.1",
   "description": "A convenience wrapper around the fetch API",
   "module": "index.mjs",
   "react-native": "index.mjs",
