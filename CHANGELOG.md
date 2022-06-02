@@ -1,5 +1,11 @@
 # @ianwalter/http
 
+## 7.0.0
+
+### Major Changes
+
+- 2d3a367: Changing main file to .mjs for better esm support (hopefully)
+
 ## 6.0.0
 
 ### Major Changes
