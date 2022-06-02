@@ -1,5 +1,11 @@
 # @ianwalter/http
 
+## 7.0.1
+
+### Patch Changes
+
+- 2c35e74: Fixing npm dist files config
+
 ## 7.0.0
 
 ### Major Changes
