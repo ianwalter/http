@@ -23,7 +23,7 @@
     "access": "public"
   },
   "files": [
-    "index.js"
+    "index.mjs"
   ],
   "repository": {
     "type": "git",
