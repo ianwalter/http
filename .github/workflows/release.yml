@@ -7,7 +7,7 @@ jobs:
   release:
     runs-on: ubuntu-latest
     container:
-      image: ianwalter/pnpm:v1.0.0
+      image: node:16-buster
     timeout-minutes: 10
     steps:
       - name: Checkout
@@ -16,12 +16,10 @@ jobs:
           # This makes Actions fetch all Git history so that Changesets can
           # generate changelogs with the correct commits.
           fetch-depth: 0
-      - name: Install
-        run: pnpm i -r
       - name: Changesets
         uses: changesets/action@21240c3cd1d2efa2672d64e0235a03cf139b83e6
         with:
-          publish: pnpx changeset publish
+          publish: yarn changeset publish
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

@@ -13,11 +13,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Pnpm
-        run: npm i -g pnpm
       - name: Install
-        run: pnpm i
+        run: yarn
       - name: Lint
-        run: pnpm lint
+        run: yarn lint
       - name: Test
-        run: pnpm t
+        run: yarn test
