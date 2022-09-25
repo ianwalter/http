@@ -7,7 +7,7 @@ jobs:
   release:
     runs-on: ubuntu-latest
     container:
-      image: node:16-buster
+      image: node:18-buster
     timeout-minutes: 10
     steps:
       - name: Checkout
