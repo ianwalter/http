@@ -738,10 +738,10 @@
     marked-terminal "^4.0.0"
     strip-ansi "^6.0.0"
 
-"@ianwalter/renovate-config@^1.4.6":
-  version "1.4.6"
-  resolved "https://registry.yarnpkg.com/@ianwalter/renovate-config/-/renovate-config-1.4.6.tgz#ed50208a5cbcf9e716676d6e713cb2a26260c83f"
-  integrity sha512-lZz13NhGS8C8WCiVP2/7jFMwT5PX9QD/EbzRWC26x24E9grCh/yEe/IEvRY5wsZAMBMz40SSVgC4ySGC7O6+jg==
+"@ianwalter/renovate-config@^1.5.0":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@ianwalter/renovate-config/-/renovate-config-1.5.0.tgz#19529517c87296622d72b16008043358b957c038"
+  integrity sha512-XVALXzdi4LT9nJE/m7KjjHrygc5wYjijkh3jZj8XMvhckcum0GqVfXk33mZ1ofEWBuGC8DhWM0imL8pC1R3MiA==
 
 "@ianwalter/rollup-plugin-hashbang@^1.3.0":
   version "1.3.0"
